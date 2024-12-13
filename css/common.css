@@ -89,7 +89,7 @@ html {
 .about-us h1 {
   font-size: 2rem;
   text-align: center;
-  color: #f88e0e; /* Culoare vibrantă pentru text */
+  color: #b36840; /* Culoare vibrantă pentru text */
   background: url("../images/rust-texture.jpg"); /* Imagine de textură de rugina */
   background-size: cover; /* Asigură că textura acoperă textul */
   -webkit-background-clip: text; /* Clip text pentru a afișa doar textura */
@@ -207,10 +207,6 @@ html {
   object-fit: contain; /* Asigură că imaginea este redimensionată pentru a se potrivi în container fără a fi distorsionată */
 }
 
-/* Efect de focus pentru buton */
-.button:focus {
-  outline: 2px solid #f88e0e; /* Contur vizibil pentru accesibilitate */
-}
 
 
 
@@ -244,11 +240,7 @@ html {
 /* Stilul pentru imaginea de fundal pe mobil */
 @media only screen and (max-width: 600px) {
   .background-image {
-    position: relative; /* Schimbă de la 'fixed' la 'relative' */
-    background-attachment: scroll; /* Dezactivează efectul de fixare */
-    background-size: cover; /* Asigură că imaginea acoperă ecranul */
-    background-position: center; /* Centrează imaginea pe ecran */
-    opacity: 0.6; /* Opțional: Ajustează opacitatea dacă vrei să păstrezi transparența */
+    position: fixed; /* Rămâne fixă pe ecran */
   }
 }
 

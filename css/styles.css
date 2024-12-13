@@ -67,7 +67,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../images/sfg2.png");
+  background-image: url("/images/sfg2.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -87,10 +87,40 @@ body {
 
 /* Stiluri pentru meniul hamburger */
 .menu-toggle {
-  display: none;
-  font-size: 30px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;  /* Dimensiunea cercului */
+  height: 60px; /* Dimensiunea cercului */
+  border-radius: 10%;  /* Face-l cerc */
+  border: 0.px solid #d66903;  /* Bordura cercului */
+  z-index: 100;  /* Pune-l deasupra altor elemente */
 }
+
+.menu-toggle:hover {
+  transform: scale(1.1);  /* Mărește butonul ușor pentru un efect vizual */
+  box-shadow: 0 0 15px 0.1px rgba(255, 140, 0, 0.7);
+} 
+
+/* Prima linie */
+.menu-toggle .bar:nth-child(1) {
+  width: 30px;
+  height: 2px;
+}
+
+/* A doua linie */
+.menu-toggle .bar:nth-child(2) {
+  width: 24px;
+  height: 2px;
+}
+
+/* A treia linie */
+.menu-toggle .bar:nth-child(3) {
+  width: 18px;
+  height: 2px;
+}
+
 
 .spark,
 .ash {
@@ -218,6 +248,12 @@ body {
 /* Meniul va fi afișat doar când are clasa "active" */
 .button-container.active {
   gap: 0.1px; /* Ajustează spațiul dintre butoane (poate fi 5px sau o altă valoare mai mică) */
+}
+
+/* Interactivitate: hover */
+.menu-toggle:hover .bar {
+  background-color: #88450d; /* Culoare elegantă la hover */
+  transform: translateX(4px); /* Mișcare subtilă la hover */
 }
 
 /* Stiluri pentru meniul burger */
