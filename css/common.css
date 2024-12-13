@@ -244,7 +244,11 @@ html {
 /* Stilul pentru imaginea de fundal pe mobil */
 @media only screen and (max-width: 600px) {
   .background-image {
-    position: fixed; /* Rămâne fixă pe ecran */
+    position: relative; /* Schimbă de la 'fixed' la 'relative' */
+    background-attachment: scroll; /* Dezactivează efectul de fixare */
+    background-size: cover; /* Asigură că imaginea acoperă ecranul */
+    background-position: center; /* Centrează imaginea pe ecran */
+    opacity: 0.6; /* Opțional: Ajustează opacitatea dacă vrei să păstrezi transparența */
   }
 }
 
