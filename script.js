@@ -1,4 +1,3 @@
-// Așteaptă ca documentul să fie complet încărcat
 document.addEventListener("DOMContentLoaded", function () {
   // Funcția care creează particule
   function createParticle(type) {
@@ -27,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var captionText = document.getElementById("caption");
 
   // Funcția care deschide modalul
-  function openModal(image) {
+  window.openModal = function(image) {
     modal.style.display = "block";
     modalImg.src = image.src;
     captionText.innerHTML = image.alt; // Adăugăm descrierea imaginii
@@ -39,9 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     closeModal.onclick = function () {
       modal.style.display = "none";
     };
-  } else {
-    console.error("Elementul 'close' nu a fost găsit!");
-  }
+  } 
 
   // Închidem modalul când dai click în afara imaginii
   window.onclick = function (event) {
@@ -54,17 +51,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const burger = document.querySelector(".menu-toggle");
   const navMenu = document.querySelector(".button-container");
 
-  burger.addEventListener("click", function () {
-    console.log("Butonul hamburger a fost apăsat."); // Debug message
-    navMenu.classList.toggle("active");
+  // Verificăm dacă butonul burger și meniul există înainte de a le manipula
+  if (burger && navMenu) {
+    burger.addEventListener("click", function () {
+      console.log("Butonul hamburger a fost apăsat."); // Debug message
+      navMenu.classList.toggle("active");
 
-    // Verifică dacă meniul a fost activat
-    if (navMenu.classList.contains("active")) {
-      console.log("Meniul este acum activ.");
-    } else {
-      console.log("Meniul este acum inactiv.");
-    }
-  });
+      // Verifică dacă meniul a fost activat
+      if (navMenu.classList.contains("active")) {
+        console.log("Meniul este acum activ.");
+      } else {
+        console.log("Meniul este acum inactiv.");
+      }
+    });
+  } 
 
   // Procesarea formularului la trimitere
   document
@@ -96,15 +96,3 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 });
-// Adaugă un log pentru a vedea dacă elementul cu clasa 'close' există
-var closeModal = document.getElementsByClassName("close")[0];
-console.log("closeModal:", closeModal); // Adaugă un log pentru debugging
-
-if (closeModal) {
-  closeModal.onclick = function () {
-    modal.style.display = "none";
-  };
-} else {
-  console.error("Elementul 'close' nu a fost găsit!");
-}
-console.log("Scriptul a fost încărcat!");
