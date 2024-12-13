@@ -426,11 +426,13 @@ html {
 /* Stiluri pentru formularul de contact */
 .contact-section {
   padding: 50px;
-  background-color: #303130;
+  background-image: url("../images/anstract-metallic-background-with-grunge-effect.jpg"); background-size: cover; /* Asigură că imaginea acoperă întreaga secțiune */
+  background-position: center center; /* Centrează imaginea pe orizontală și verticală */
+  background-repeat: no-repeat;
   border-radius: 10px;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
-  box-shadow: 0 4px 6px rgba(164, 84, 3, 0.1);
+  box-shadow: 0 4px 6px rgba(125, 65, 5, 0.1);
   position: relative; /* Așa că z-index va funcționa */
   z-index: 9; /* Asigură-te că formularul va fi deasupra altor elemente */
 }
