@@ -1,0 +1,254 @@
+/* Corecturi și optimizări pentru CSS */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #010000;
+}
+
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 20px;
+  left: 80px;
+  z-index: 2;
+}
+
+.button {
+  display: inline-block;
+  width: 115px;
+  height: 50px;
+  background-color: transparent;
+  color: rgb(166, 160, 160);
+  border-radius: 12px;
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin: 10px;
+  opacity: 0.6;
+  font-family: "Bona Nova SC", serif;
+  font-weight: 400;
+}
+
+.button:hover {
+  box-shadow: 0px 0px 16px 1px rgba(255, 140, 0, 0.6);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgb(180, 156, 112),
+    transparent
+  );
+  border-radius: 15px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: -1;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/sfg 2 .png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0; /* Asigură-te că overlay-ul este vizibil */
+}
+
+/* Stiluri pentru meniul hamburger */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.spark,
+.ash {
+  position: absolute;
+  background-color: orange;
+  border-radius: 50%;
+  opacity: 0.9; /* Corectat */
+}
+
+.spark {
+  width: 5px;
+  height: 5px;
+  animation: moveSpark 4s linear infinite;
+}
+
+.ash {
+  width: 1px;
+  height: 10px;
+  background-color: #b5651d;
+  opacity: 0.5; /* Corectat */
+  animation: moveAsh 5s linear infinite;
+}
+
+@keyframes moveSpark {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px) scale(0.1);
+    opacity: 0;
+  }
+}
+
+@keyframes moveAsh {
+  0% {
+    transform: translateY(100vh) translateX(-100px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Media Queries consolidate și optimizate */
+@media (max-width: 768px) {
+  .button-container {
+    flex: 1 1 100%;
+    font-size: 0.9rem;
+  }
+
+  .background {
+    background-size: contain;
+  }
+}
+
+@media (max-width: 480px) {
+  .button-container {
+    font-size: 0.8rem;
+    padding: 10px 15px;
+  }
+
+  .background {
+    background-size: contain;
+  }
+}
+.element {
+  -webkit-transform: rotate(45deg); /* Safari/Chrome */
+  -moz-transform: rotate(45deg); /* Firefox */
+  -ms-transform: rotate(45deg); /* Internet Explorer */
+  transform: rotate(45deg); /* Standard */
+}
+
+/* Core styling for the body */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #010000;
+}
+
+/* Butoanele sunt vizibile implicit pe ecranele mari */
+.button-container {
+  display: flex;
+  gap: 2px;
+  position: absolute;
+  top: 20px;
+  left: 70px;
+}
+
+/* Ascundem meniul burger pe ecranele mari */
+.menu-toggle {
+  display: none;
+  background-color: transparent;
+}
+
+/* Stilizare liniile butonului burger */
+.menu-toggle div {
+  width: 25px;
+  height: 2px; /* Grosimea liniilor */
+  background-color: #8f8888;
+  transition: 0.4s;
+}
+
+/* Pentru ecranele mici */
+@media (max-width: 768px) {
+  /* Afișăm butonul burger doar pe ecranele mici */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 20px; /* Mutăm butonul burger în stânga */
+    cursor: pointer;
+    z-index: 10;
+  }
+}
+
+/* Ascunde meniul pe ecranele mici */
+.button-container {
+  display: none; /* Ascunde meniul implicit */
+}
+/* Meniul va fi afișat doar când are clasa "active" */
+.button-container.active {
+  gap: 0.1px; /* Ajustează spațiul dintre butoane (poate fi 5px sau o altă valoare mai mică) */
+}
+
+
+/* Stiluri pentru meniul burger */
+.menu-toggle {
+  cursor: pointer;
+  display: flex; /* Asigură-te că barele se aliniază */
+  flex-direction: column;
+  padding: 10px;
+  z-index: 100; /* Pune meniul deasupra altor elemente */
+}
+
+/* Stil pentru barele din meniul burger */
+.bar {
+  width: 30px;
+  height: 3px;
+  margin: 5px 0;
+}
+
+/* Meniul va fi afișat doar când are clasa "active" */
+.button-container.active {
+  display: flex;
+}
+
+/* Stiluri pentru ecrane mari */
+@media (min-width: 601px) {
+  .button-container {
+    display: flex; /* Afișează meniul pe ecranele mari */
+  }
+
+  .menu-toggle {
+    display: none; /* Ascunde meniul burger pe ecranele mari */
+  }
+}
