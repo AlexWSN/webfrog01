@@ -90,7 +90,7 @@ html {
   font-size: 2rem;
   text-align: center;
   color: #f88e0e; /* Culoare vibrantă pentru text */
-  background: url("/images/rust-texture.jpg"); /* Imagine de textură de rugina */
+  background: url("../images/rust-texture.jpg"); /* Imagine de textură de rugina */
   background-size: cover; /* Asigură că textura acoperă textul */
   -webkit-background-clip: text; /* Clip text pentru a afișa doar textura */
   background-clip: text;
@@ -165,7 +165,7 @@ html {
   background-attachment: fixed; /* Face imaginea fixă la scroll */
   z-index: 0; /* Plasează imaginea sub animație și buton */
   opacity: 0.6; /* Setează opacitatea la 0.6 pentru vizibilitate */
-  background-image: url("/images/background.png");
+  background-image: url("../images/background.png");
 }
 
 /* PORTOFOLIU */
