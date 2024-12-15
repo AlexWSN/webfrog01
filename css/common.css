@@ -47,6 +47,9 @@ html {
     transform: translateY(100vh) translateX(0) scale(0.5);
     opacity: 1;
   }
+  50% {
+    opacity: 0.5; /* Scânteia dispare treptat */
+  }
   100% {
     transform: translateY(-100vh) translateX(100px) scale(0.5);
     opacity: 0;
@@ -99,7 +102,6 @@ html {
     /* Umbra subtilă pentru adâncime */ -1px -1px 2px rgba(0, 0, 0, 0.8),
     /* Umbra suplimentară pentru contrast */ 1px 1px 1px rgba(0, 0, 0, 0.5); /* Umbra principală pentru efect 3D */
   animation: glow 0.01s infinite alternate;
- 
 }
 
 .about-us p {
@@ -108,7 +110,6 @@ html {
   padding: 0 1px; /* Adaugă padding de 20px pe stânga și dreapta */
   z-index: -1;
   color: #fffefd; /* Culoare de bază */
-  
 }
 
 /* Fundalul pentru .about-us */
@@ -118,8 +119,7 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background:  center center,
-    rgba(30, 30, 31, 0.8);
+  background: center center, rgba(30, 30, 31, 0.8);
   background-size: cover; /* Imaginea va fi redimensionată la 50% din dimensiunea elementului */
   background-position: center; /* Asigură că imaginea este centrată */
   border-radius: 15px; /* Colțuri rotunjite */
@@ -142,7 +142,7 @@ html {
   font-size: 16px;
   position: fixed;
   overflow: hidden;
-  z-index: 10; /* Asigură că textul butonului este deasupra gradientului */
+  z-index: 20; /* Asigură că textul butonului este deasupra gradientului */
   margin: 10px;
   opacity: 0.6;
   font-weight: 400; /*  */
@@ -162,8 +162,7 @@ html {
   height: 100%;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Face imaginea fixă la scroll */
-  z-index: 0; /* Plasează imaginea sub animație și buton */
+  z-index: 1; /* Plasează imaginea sub animație și buton */
   opacity: 0.6; /* Setează opacitatea la 0.6 pentru vizibilitate */
   background-image: url("../images/background.png");
 }
@@ -207,9 +206,6 @@ html {
   object-fit: contain; /* Asigură că imaginea este redimensionată pentru a se potrivi în container fără a fi distorsionată */
 }
 
-
-
-
 .sparks {
   position: absolute;
   top: 0;
@@ -220,9 +216,9 @@ html {
   z-index: 2; /* Între fundal și formular */
 }
 
-
 /* Adăugare will-change pentru animații */
-.spark, .ash {
+.spark,
+.ash {
   will-change: transform, opacity; /* Îmbunătățire performanță animație */
 }
 
@@ -243,7 +239,6 @@ html {
     position: fixed; /* Rămâne fixă pe ecran */
   }
 }
-
 
 /* Ecrane medii (tablete) */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
@@ -392,7 +387,6 @@ html {
   display: block; /* Asigură-te că imaginea este vizibilă */
 }
 
-
 .modal .alt-text {
   display: none; /* Ascunde textul alternativ */
 }
@@ -423,47 +417,58 @@ html {
   font-size: 16px;
 }
 
-/* Stiluri pentru formularul de contact */
+/* Formularul de contact */
 .contact-section {
-  padding: 50px;
-  background-image: url("../images/anstract-metallic-background-with-grunge-effect.jpg"); background-size: cover; /* Asigură că imaginea acoperă întreaga secțiune */
-  background-position: center center; /* Centrează imaginea pe orizontală și verticală */
-  background-repeat: no-repeat;
-  border-radius: 10px;
-  max-width: 700px;
-  margin: 0 auto;
-  box-shadow: 0 4px 6px rgba(125, 65, 5, 0.1);
-  position: relative; /* Așa că z-index va funcționa */
-  z-index: 9; /* Asigură-te că formularul va fi deasupra altor elemente */
+  justify-content: center; /* Centrează conținutul orizontal */
+  align-items: center;
+  flex-direction: column;
+  width: 90%; /* Formularul ocupă 90% din lățimea ecranului */
+  width: 100%; /* Dimensiune maximă pentru formular */
+  margin-top: 100px; /* Centrează formularul */
+  padding-top: 150px; /* Spațiu interior pentru elementele din formular */
+  background-image: url("../images/anstract-metallic-background-with-grunge-effect.jpg"); /* Imaginea de fundal */
+  background-size: contain; /* Păstrează proporțiile imaginii */
+  background-repeat: no-repeat; /* Nu repetă imaginea */
+  background-position: center; /* Centrează imaginea */
+  position: relative; /* Necesită poziționare pentru z-index */
+  z-index: 4;
 }
 
 .contact-section h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 24px;
-  color: #746f6f;
+  color: #ff9500;
 }
 
 .contact-form {
+  align-items: center;
+  width: 80%; /* Ajustează lățimea în funcție de container */
+  max-width: 400px; /* Dimensiune maximă fixă */
+  margin: 0 auto; /* Centrează formularul pe orizontală */
+  margin-top: -20px;
+  padding: 20px 20px; /* Spațiu interior */
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1px;
+  position: relative; /* Schimbă din `center` în `relative` */
+  z-index: 2; /* Asigură că formularul va fi deasupra imaginii */
 }
 
 .contact-form label {
-  font-size: 16px;
-  color: #838080;
+  font-size: 12px;
+  color: #fffefe;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #b0a9a9;
-  border-radius: 5px;
-  width: 100%;
+  padding: 9px;
+  font-size: 14px;
+  border: 1px solid #7a7360;
+  border-radius: 3px;
+  width: 60%;
   box-sizing: border-box;
-  background-color: #a09c9c; /* Culoare fundal câmpuri de text */
+  background-color: #cac9c6; /* Culoare fundal câmpuri de text */
 }
 
 .contact-form input:focus,
@@ -474,9 +479,9 @@ html {
 
 .contact-form input:-webkit-autofill,
 .contact-form textarea:-webkit-autofill {
-  background-color: #f0f0f0 !important; /* Gri sau altă culoare dorită */
-  color: #333 !important; /* Text color */
-  border: 1px solid #ccc !important; /* Bordura */
+  background-color: #f0f0f0; /* Gri sau altă culoare dorită */
+  color: #e5dada; /* Text color */
+  border: 1px solid #ccc; /* Bordura */
   box-shadow: 0 0 0px 1000px #f0f0f0 inset; /* Fundal consistent */
   transition: background-color 5000s ease-in-out 0s; /* Evită ca stilurile implicite să revină */
 }
@@ -484,17 +489,18 @@ html {
 /* Pentru alte browsere compatibile */
 .contact-form input:autofill,
 .contact-form textarea:autofill {
-  background-color: #f0f0f0 !important; /* Fundal gri */
-  color: #333 !important;
+  background-color: #444343; /* Fundal gri */
+  color: #968c8c;
 }
 
 .contact-form button {
-  padding: 10px 20px;
+  padding: 3px 20px;
   font-size: 16px;
-  color: #fff;
+  color: #f1efef;
   background-color: #494a4b;
   border: none;
   border-radius: 5px;
+  width: 60%;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -507,7 +513,7 @@ html {
 #formResponse {
   margin-top: 15px;
   font-size: 16px;
-  color: #4f92de;
+  width: 60%;
 }
 
 .modal {

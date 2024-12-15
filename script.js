@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded", function () {
   var captionText = document.getElementById("caption");
 
   // Funcția care deschide modalul
-  window.openModal = function(image) {
+  window.openModal = function (image) {
     modal.style.display = "block";
     modalImg.src = image.src;
     captionText.innerHTML = image.alt; // Adăugăm descrierea imaginii
-  }
+  };
 
   // Închidem modalul când dai click pe "x"
   var closeModal = document.getElementsByClassName("close")[0];
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     closeModal.onclick = function () {
       modal.style.display = "none";
     };
-  } 
+  }
 
   // Închidem modalul când dai click în afara imaginii
   window.onclick = function (event) {
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Meniul este acum inactiv.");
       }
     });
-  } 
+  }
 
   // Procesarea formularului la trimitere
   document
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Dacă toate câmpurile sunt completate corect, trimitem datele
         document.getElementById(
           "formResponse"
-        ).innerHTML = `<p>Mulțumim, ${name}! Mesajul tău a fost trimis cu succes.</p>`;
+        ).innerHTML = `<p>Cheers, ${name}! All done, message delivered!</p>`;
         document.getElementById("formResponse").style.color = "orange";
 
         // Resetăm formularul
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         // Dacă există câmpuri necompletate
         document.getElementById("formResponse").innerHTML =
-          "<p>Te rugăm să completezi toate câmpurile formularului.</p>";
+          "<p>Complete all fields!</p>";
         document.getElementById("formResponse").style.color = "red";
       }
     });
