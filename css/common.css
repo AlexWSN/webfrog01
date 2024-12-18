@@ -419,18 +419,19 @@ html {
 
 /* Formularul de contact */
 .contact-section {
-  justify-content: center; /* Centrează conținutul orizontal */
-  align-items: center;
-  flex-direction: column;
-  width: 90%; /* Formularul ocupă 90% din lățimea ecranului */
-  width: 100%; /* Dimensiune maximă pentru formular */
-  margin-top: 100px; /* Centrează formularul */
-  padding-top: 150px; /* Spațiu interior pentru elementele din formular */
+  display: flex; /* Activează flexbox */
+  justify-content: center; /* Centrează pe orizontală */
+  align-items: center; /* Centrează pe verticală */
+  flex-direction: column; /* Asigură că formularul și alte elemente sunt stivuite */
+  height: 80vh; /* Setează înălțimea secțiunii să ocupe întreaga fereastră */
+  padding: 40; /* Elimină paddingul */
+  margin-top: 20%;
+  overflow: hidden; /* Elimină orice scroll */
   background-image: url("../images/anstract-metallic-background-with-grunge-effect.jpg"); /* Imaginea de fundal */
   background-size: contain; /* Păstrează proporțiile imaginii */
-  background-repeat: no-repeat; /* Nu repetă imaginea */
+  background-repeat: no-repeat; /* Fără repetare */
   background-position: center; /* Centrează imaginea */
-  position: relative; /* Necesită poziționare pentru z-index */
+  position: relative; /* Pentru controlul poziției */
   z-index: 4;
 }
 
@@ -443,17 +444,19 @@ html {
 
 .contact-form {
   align-items: center;
-  width: 80%; /* Ajustează lățimea în funcție de container */
-  max-width: 400px; /* Dimensiune maximă fixă */
-  margin: 0 auto; /* Centrează formularul pe orizontală */
-  margin-top: -20px;
-  padding: 20px 20px; /* Spațiu interior */
+  width: 60%; /* Ajustează dimensiunea formularului */
+  max-width: 300px; /* Dimensiune maximă a formularului */
+  padding: 10px; /* Spațiu interior */
   display: flex;
-  flex-direction: column;
-  gap: 1px;
-  position: relative; /* Schimbă din `center` în `relative` */
-  z-index: 2; /* Asigură că formularul va fi deasupra imaginii */
+  flex-direction: column; /* Elemente stivuite vertical */
+  gap: 1px; /* Spațiu între elemente */
+  background: rgba(36, 36, 36, 0.8); /* Fundal translucid*/
+  border-radius: 10px; /* Colțuri rotunjite */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Umbră pentru adâncime */
+  position: relative;
+  z-index: 1; /* Formularul apare deasupra imaginii */
 }
+
 
 .contact-form label {
   font-size: 12px;
@@ -466,7 +469,7 @@ html {
   font-size: 14px;
   border: 1px solid #7a7360;
   border-radius: 3px;
-  width: 60%;
+  width: 70%;
   box-sizing: border-box;
   background-color: #cac9c6; /* Culoare fundal câmpuri de text */
 }
@@ -500,7 +503,7 @@ html {
   background-color: #494a4b;
   border: none;
   border-radius: 5px;
-  width: 60%;
+  width: 70%;
   cursor: pointer;
   transition: background-color 0.3s;
 }
