@@ -177,8 +177,7 @@ html {
   gap: 5px; /* Distanță între rânduri */
   margin: 0 auto; /* Centrează cercul pe orizontală */
   padding-right: 10px; /* Adaugă un pic de spațiu la dreapta pentru a nu fi lipit de marginea cercului */
-  box-shadow: 0 0 15px 5px rgba(255, 149, 0, 0.75),
-    0 0 155px 1px #b36840; /* Efect de neon portocaliu */
+  box-shadow: 0 0 15px 5px rgba(255, 149, 0, 0.75), 0 0 155px 1px #b36840; /* Efect de neon portocaliu */
   overflow: hidden;
 }
 
@@ -188,7 +187,6 @@ html {
   font-weight: bold;
   text-transform: uppercase; /* Stil dramatic */
   text-align: center;
-  
 }
 
 .line.orange {
@@ -200,7 +198,7 @@ html {
 }
 .bridge-text {
   position: absolute; /* Poziționare absolută pentru a controla exact unde apare pe pagină */
-  bottom: 50px; /* Mută blocul mai jos de marginile paginii */
+  bottom: 200px; /* Mută blocul mai jos de marginile paginii */
   right: -500px; /* Mută blocul mai spre dreapta paginii */
   z-index: 10; /* Asigură că textul va fi deasupra altor elemente, dacă e necesar */
 }
@@ -250,6 +248,59 @@ html {
 
 .button:hover {
   box-shadow: 0px 0px 16px 1px rgba(255, 140, 0, 0.6);
+}
+
+/* Stiluri pentru secțiunea SVG */
+.animated-svg {
+  display: flex;
+  justify-content: center; /* Centrează animația orizontal */
+  align-items: center; /* Centrează animația vertical */
+  margin: 20px 0; /* Spațiere sus și jos */
+  height: 250px; /* Ajustează pentru a crea un spațiu fix */
+  overflow: hidden; /* Ascunde orice parte a SVG-ului care iese din secțiune */
+  background-color: #0a0909;
+}
+
+.animated-svg svg {
+  max-width: 100%; /* Asigură scalarea SVG-ului pe ecrane mici */
+  height: auto; /* Păstrează proporțiile SVG-ului */
+}
+.animated-svg {
+  display: flex;
+  justify-content: center; /* Centrează SVG pe orizontală */
+  align-items: center; /* Centrează SVG pe verticală */
+  margin: 200px auto; /* Spațiu sus și jos */
+  height: 100px; /* Ajustează pentru dimensiune dorită */
+  width: 100%; /* Asigură lățime completă */
+  background-color: #000000; /* Fundalul secțiunii */
+  position: relative; /* Poziționare configurabilă */
+  overflow: hidden; /* Ascunde orice parte care iese */
+  box-shadow: 0 0 15px 5px rgba(255, 149, 0, 0.75), 0 0 155px 1px #b36840; /* Efect de neon portocaliu */
+  background: linear-gradient(
+    #b36840,
+    /* Portocaliu translucid */ rgba(255, 149, 0, 0.2),
+    /* Estompare treptată */ rgba(18, 14, 10, 0) /* Complet transparent */
+  );
+}
+text {
+  /* Folosește dimensiuni relative la lățimea ferestrei */
+  font-weight: bold;
+  text-anchor: middle; /* Centrează textul pe orizontală */
+  dominant-baseline: middle; /* Centrează textul pe verticală */
+  font-family: Arial, sans-serif; /* Setează fontul */
+}
+
+/* Media query pentru dispozitive mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .animated-svg {
+    height: 200px; /* Ajustează înălțimea pentru mobil */
+    margin: 10px auto; /* Reducem spațiul pe margini */
+  }
+
+  .animated-svg svg {
+    width: 90%; /* Asigură că SVG-ul rămâne proporțional pe ecrane mici */
+    height: auto; /* Păstrează proporțiile */
+  }
 }
 
 /* Stilul pentru imaginea de fundal */
