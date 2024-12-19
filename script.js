@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.openModal = function (image) {
     modal.style.display = "block";
     modalImg.src = image.src;
-    };
+  };
 
   // Închidem modalul când dai click pe "x"
   var closeModal = document.getElementsByClassName("close")[0];
