@@ -71,12 +71,12 @@ html {
 
 .about-us-content {
   max-width: 1400px; /* Lățimea maximă a containerului */
-  margin: 30 auto; /* Centrează containerul pe orizontală */
+  margin: 40 auto; /* Centrează containerul pe orizontală */
   padding: 40px; /* Padding în jurul textului */
 }
 
 .about-us {
-  position: relative; /* Asigură că z-index va funcționa */
+  position: absolute; /* Asigură că z-index va funcționa */
   z-index: 2; /* Specifică un z-index mai mic decât al animației */
   max-width: 600px;
   color: #fffefd; /* Culoare de bază */
@@ -104,6 +104,30 @@ html {
   animation: glow 0.01s infinite alternate;
 }
 
+/* Bara portocalie de design */
+.design-bar {
+  width: 100px; /* Lungimea barei */
+  height: 5px; /* Grosimea barei */
+  background-color: rgb(154, 83, 12); /* Culoarea barei */
+  margin: 0 auto 20px; /* Centrează bara și adaugă spațiu dedesubt */
+  position: relative;
+}
+
+.design-bar::after {
+  content: "";
+  position: absolute;
+  top: 29%; /* Coboară sub bară */
+  left: 30;
+  width: 100%;
+  height: 380px; /* Înălțimea „păturii de lumină” */
+  background: linear-gradient(
+    rgba(255, 149, 0, 0.5),
+    /* Portocaliu translucid */ rgba(255, 149, 0, 0.2),
+    /* Estompare treptată */ rgba(18, 14, 10, 0) /* Complet transparent */
+  );
+  z-index: -1; /* Plasează „pătura” sub restul conținutului */
+}
+
 .about-us p {
   font-size: 0.9rem; /* Dimensiunea textului pentru paragrafe */
   margin: -100 10px 20px; /* Spațiu uniform pe toate laturile */
@@ -126,6 +150,63 @@ html {
   border-radius: 15px; /* Colțuri rotunjite pentru fundal */
   z-index: 1; /* Pune fundalul sub text */
   opacity: 0.3;
+}
+
+/* Bara portocalie de design */
+.design-bar {
+  width: 100%;
+  height: 5px;
+  background-color: orange;
+  margin-bottom: 0px;
+  box-shadow: 0 0 10px orange, 0 0 10px orange, 0 0 30px orange;
+  border-radius: 1px;
+  animation: neon-pulse 1.5s infinite alternate; /* Efect de pulsație continuă */
+}
+
+/* Stiluri pentru containerul textului */
+.bridge-text {
+  position: absolute;
+  top: 50%; /* Centrează pe verticală */
+  right: 10%; /* Poziționează în partea dreaptă */
+  transform: translateY(-50%); /* Centrează exact în mijloc */
+  text-align: center;
+}
+
+/* Cerc portocaliu */
+.circle {
+  width: 200px; /* Dimensiunea cercului */
+  height: 200px;
+  border: 4px solid rgb(186, 107, 4); /* Bordura portocalie */
+  border-radius: 50%; /* Transformă div-ul într-un cerc */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrează liniile în cerc pe verticală */
+  align-items: flex-end; /* Alinierea textului la dreapta în cerc */
+  gap: 5px; /* Distanță între rânduri */
+  margin: 0 auto; /* Centrează cercul pe orizontală */
+  padding-right: 10px; /* Adaugă un pic de spațiu la dreapta pentru a nu fi lipit de marginea cercului */
+}
+
+/* Stiluri pentru liniile de text */
+.line {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase; /* Stil dramatic */
+  text-align: center;
+}
+
+.line.orange {
+  color: rgb(186, 107, 4); /* Primele 3 rânduri portocalii */
+}
+
+.line.white {
+  color: white; /* Ultimul rând alb */
+}
+.bridge-text {
+  position: absolute; /* Poziționare absolută pentru a controla exact unde apare pe pagină */
+  bottom: 420px; /* Mută blocul mai jos de marginile paginii */
+  right: -200px; /* Mută blocul mai spre dreapta paginii */
+  z-index: 10; /* Asigură că textul va fi deasupra altor elemente, dacă e necesar */
 }
 
 /* Stilul pentru buton HOME*/
@@ -337,16 +418,11 @@ html {
   }
 
   .about-us h1 {
-    font-size: 1.2rem; /* Ajustează dimensiunea titlului */
+    font-size: 2rem; /* Ajustează dimensiunea titlului */
   }
 
   .about-us p {
-    font-size: 0.8rem; /* Ajustează dimensiunea textului pentru paragrafe */
-  }
-
-  .about-us-bg {
-    height: auto; /* Permite înălțimea automată pentru imaginea de fundal */
-    background-size: cover; /* Asigură că imaginea acoperă ecranul */
+    font-size: 1rem; /* Ajustează dimensiunea textului pentru paragrafe */
   }
 }
 
@@ -358,7 +434,7 @@ html {
   }
 
   .about-us h1 {
-    font-size: 1.5rem; /* Ajustează dimensiunea titlului */
+    font-size: 2.5rem; /* Ajustează dimensiunea titlului */
   }
 
   .about-us p {
@@ -456,7 +532,6 @@ html {
   position: relative;
   z-index: 1; /* Formularul apare deasupra imaginii */
 }
-
 
 .contact-form label {
   font-size: 12px;
