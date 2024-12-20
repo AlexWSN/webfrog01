@@ -220,8 +220,11 @@ html {
 /* Responsivitate pentru ecrane medii și mici */
 @media (max-width: 992px) {
   .card-container {
+    display: flex; /* Asigură că este folosit Flexbox */
+    flex-wrap: wrap; /* Permite cardurilor să se împartă pe mai multe linii */
+    justify-content: center; /* Centrează cardurile pe orizontală */
     width: 80%; /* Lărgește containerul pentru ecrane medii */
-    justify-content: center; /* Centrează cardurile */
+    margin: 0 auto; /* Centrează containerul pe orizontală */
   }
 }
 
@@ -229,13 +232,19 @@ html {
   .card {
     width: 80%; /* Cardurile ocupă 80% din container pe ecrane mici */
     margin-bottom: 20px; /* Spațiu între carduri */
+    margin-left: auto; /* Asigură că cardurile se alină corect pe orizontală */
+    margin-right: auto; /* Asigură că cardurile se alină corect pe orizontală */
   }
 
   .card-container {
+    display: flex; /* Asigură că este folosit Flexbox */
+    flex-wrap: wrap; /* Permite cardurilor să se împartă pe mai multe linii */
+    justify-content: center; /* Centrează cardurile pe orizontală */
     width: 100%; /* Containerul ocupă întreaga lățime pe ecrane mici */
-    justify-content: center; /* Centrează conținutul */
+    margin: 0 auto; /* Centrează containerul pe orizontală */
   }
 }
+
 
 
 /* Cerc portocaliu */
@@ -397,40 +406,40 @@ text {
   font-family: Arial, sans-serif; /* Setează fontul */
 }
 
-
 /* Media query pentru dispozitive medii (tablete) */
 @media (min-width: 769px) and (max-width: 1024px) {
   .animated-svg {
-    display: flex; /* Utilizare flexbox pentru centrare */
+    display: flex; /* Flexbox pentru centrare */
+    justify-content: center; /* Centrează SVG-ul pe orizontală */
+    align-items: center; /* Centrează SVG-ul pe verticală */
     height: 200px; /* Ajustează înălțimea pentru tablete */
-    margin: 0 auto; /* Asigură că secțiunea SVG este centrată pe orizontală */
+    margin: 0 auto; /* Centrează secțiunea SVG pe orizontală */
     padding: 1px; /* Adaugă puțin spațiu */
-    margin-top: 50%;
   }
 
   .animated-svg svg {
     width: 70%; /* Ajustează dimensiunea SVG-ului pentru tablete */
     height: auto; /* Păstrează proporțiile corecte */
     max-width: 500px; /* Dimensiune maximă pentru SVG */
-    justify-content: center; /* Centrează pe orizontală */
-    align-items: center; /* Centrează pe verticală */
   }
 }
-
 
 /* Media query pentru dispozitive mobile (max-width: 768px) */
 @media (max-width: 768px) {
   .animated-svg {
+    display: flex; /* Flexbox pentru centrare */
+    justify-content: center; /* Centrează SVG-ul pe orizontală */
+    align-items: center; /* Centrează SVG-ul pe verticală */
     height: 100px; /* Ajustează înălțimea pentru mobil */
     margin: 10px auto; /* Reducem spațiul pe margini */
-    margin-left: 5.5%;
   }
 
   .animated-svg svg {
     width: 90%; /* Asigură că SVG-ul rămâne proporțional pe ecrane mici */
-    height: auto; /* Păstrează proporțiile */
+    height: auto; /* Păstrează proporțiile corecte */
   }
 }
+
 
 /* Stilul pentru imaginea de fundal */
 .background-image {
