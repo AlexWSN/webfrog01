@@ -68,10 +68,10 @@ body {
   width: 100%;
   height: 100%;
   background-image: url("../images/sfgmobile.png");
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Adăugăm această proprietate pentru a fixa imaginea de fundal */
+  /*background-attachment: fixed; /* Adăugăm această proprietate pentru a fixa imaginea de fundal */
   z-index: 0;
   opacity: 1;
 }

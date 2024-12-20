@@ -20,6 +20,20 @@ document.addEventListener("DOMContentLoaded", function () {
     createParticle("ash");
   }, 200);
 
+  // Modifică intervalul animațiilor particulelor pe mobil
+if (window.innerWidth <= 768) {
+  setInterval(() => {
+    createParticle("spark");
+    createParticle("ash");
+  }, 300); // Crește intervalul pentru a reduce sarcina
+} else {
+  setInterval(() => {
+    createParticle("spark");
+    createParticle("ash");
+  }, 200); // Păstrează intervalul mai scurt pe desktop
+}
+
+
   // Obținem modalul și elementele asociate
   var modal = document.getElementById("imageModal");
   var modalImg = document.getElementById("modalImage");

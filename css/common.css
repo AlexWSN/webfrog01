@@ -402,7 +402,7 @@ text {
   /* Folosește dimensiuni relative la lățimea ferestrei */
   font-weight: bold;
   text-anchor: middle; /* Centrează textul pe orizontală */
-  dominant-baseline: middle; /* Centrează textul pe verticală */
+   /* Centrează textul pe verticală */
   font-family: Arial, sans-serif; /* Setează fontul */
 }
 
