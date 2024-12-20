@@ -179,7 +179,7 @@ html, body {
   }
 
   .background {
-    background-size: contain;
+    background-size: cover;
   }
 }
 
@@ -190,7 +190,7 @@ html, body {
   }
 
   .background {
-    background-size: contain;
+    background-size: cover;
   }
 }
 .element {
