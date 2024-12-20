@@ -7,7 +7,6 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #010000;
-  overflow-x: hidden; 
 }
 
 .button-container {
@@ -76,10 +75,7 @@ body {
   z-index: 0;
   opacity: 1;
 }
-html, body {
-  width: 100%; /* Asigură-te că paginile nu depășesc 100% lățimea */
-  overflow-x: hidden; /* Asigură-te că scroll-ul orizontal este ascuns */
-}
+
 .overlay {
   position: absolute;
   top: 0;
