@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Eliminăm particula după terminarea animației
     setTimeout(() => {
       particle.remove();
-    }, 5000);
+    }, 1000);
   }
 
   // Generăm scântei și fulgi de cenușă continuu
