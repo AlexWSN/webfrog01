@@ -7,6 +7,7 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #010000;
+  overflow-x: hidden; 
 }
 
 .button-container {
@@ -71,10 +72,14 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed; /* Adăugăm această proprietate pentru a fixa imaginea de fundal */
   z-index: 0;
   opacity: 1;
 }
-
+html, body {
+  width: 100%; /* Asigură-te că paginile nu depășesc 100% lățimea */
+  overflow-x: hidden; /* Asigură-te că scroll-ul orizontal este ascuns */
+}
 .overlay {
   position: absolute;
   top: 0;

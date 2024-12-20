@@ -3,7 +3,6 @@ body,
 html {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
   height: 100%;
   width: 100%;
   background-color: #000000; /* Fundal negru pentru contrast */
@@ -71,104 +70,178 @@ html {
 /* ABOUT US */
 
 .about-us-content {
-  max-width: 1400px; /* Lățimea maximă a containerului */
-  margin: 40 auto; /* Centrează containerul pe orizontală */
+  max-width: 1200px; /* Lățimea maximă a containerului */
+  width: 90%; /* Lățime flexibilă pentru a se adapta pe ecrane mai mici */
+  margin: 0 auto; /* Centrează containerul pe orizontală */
   padding: 40px; /* Padding în jurul textului */
+  box-sizing: border-box; /* Asigură că padding-ul nu adaugă la dimensiunea totală */
+  position: relative;
+  z-index: 10;
+}
+.about-us p {
+  font-size: 1rem; /* Dimensiunea textului pentru paragrafe */
+  margin: -100 10px 20px; /* Spațiu uniform pe toate laturile */
+  padding: 0 1px; /* Adaugă padding de 20px pe stânga și dreapta */
+  z-index: 10;
+  position: relative;
+  color: #665b4f; /* Culoare de bază */
 }
 
 .about-us {
-  position: absolute; /* Asigură că z-index va funcționa */
-  z-index: 2; /* Specifică un z-index mai mic decât al animației */
-  max-width: 600px;
-  color: #fffefd; /* Culoare de bază */
-  margin: 0 auto; /* Centrează conținutul */
+  /* Modificare din absolute în relative pentru a permite mai ușor alinierea */
+  max-width: 1200px;
   padding: 90px;
-  border-radius: 15px; /* Colțuri rotunjite */
-  text-align: justify; /* Justifică textul */
+  text-align: justify; /* Aliniează textul */
   line-height: 1.4; /* Spațiu mai mare între linii pentru lizibilitate */
-  top: 110px;
-  font-size: 1rem; /* Dimensiunea textului de bază */
+  margin: 0 auto; /* Centrează elementul .about-us */
 }
 
 .about-us h1 {
-  font-size: 2rem;
-  text-align: center;
-  color: #b36840; /* Culoare vibrantă pentru text */
-  background: url("../images/rust-texture.jpg"); /* Imagine de textură de rugina */
-  background-size: cover; /* Asigură că textura acoperă textul */
-  -webkit-background-clip: text; /* Clip text pentru a afișa doar textura */
-  background-clip: text;
-  /* Efect de embosare prin umbre multiple */
-  text-shadow: -1px -1px 0px #502804,
-    /* Umbra subtilă pentru adâncime */ -1px -1px 2px rgba(0, 0, 0, 0.8),
-    /* Umbra suplimentară pentru contrast */ 1px 1px 1px rgba(0, 0, 0, 0.5); /* Umbra principală pentru efect 3D */
-  animation: glow 0.01s infinite alternate;
+  font-size: 2rem; /* Dimensiune mai mare a textului */
+  text-align: center; /* Centrează textul orizontal */
+  color: transparent; /* Textul devine transparent */
+  background: url("../images/rust.jpg"); /* Imagine de textură de rugina */
+  background-size: 20%; /* Asigură că textura acoperă bine textul */
+  -webkit-background-clip: text; /* Afișează textura doar pe text (pentru WebKit) */
+  background-clip: text; /* Afișează textura doar pe text */
+  -webkit-text-fill-color: transparent; /* Asigură transparența textului pe WebKit */
+  z-index: 10; /* Asigură vizibilitatea deasupra altor elemente */
+  margin: 0; /* Elimină marginile implicite */
+  margin-bottom: 5%;
+}
+
+@media (max-width: 768px) {
+  .about-us h1 {
+    font-size: 1.5rem; /* Micșorăm dimensiunea textului pe ecrane mai mici */
+    margin-top: 15%; /* Ajustăm marginea superioară pentru ecrane mai mici */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us h1 {
+    font-size: 1.2rem; /* Micșorăm și mai mult dimensiunea textului pe ecrane foarte mici */
+    margin-top: 20%; /* Ajustăm marginea superioară pentru telefoane mici */
+  }
+}
+@media (max-width: 768px) {
+  .about-us-content {
+    width: 90%; /* Ajustează lățimea containerului pe ecrane medii */
+    padding: 30px; /* Redu padding-ul pe ecrane mai mici */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us-content {
+    width: 95%; /* Ajustează lățimea containerului pe ecrane foarte mici */
+    padding: 20px; /* Redu și mai mult padding-ul pe telefoane mici */
+  }
 }
 
 /* Bara portocalie de design */
 .design-bar {
-  width: 100px; /* Lungimea barei */
-  height: 5px; /* Grosimea barei */
-  background-color: #b36840; /* Culoarea barei */
   margin: 0 auto 20px; /* Centrează bara și adaugă spațiu dedesubt */
   position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: #b4683e;
+  margin-bottom: 0px;
+  box-shadow: 0 0 10px rgba(148, 90, 8, 0.75), 0 0 10px rgba(255, 149, 0, 0.75),
+    0 0 30px rgba(255, 149, 0, 0.75);
+  border-radius: 1px;
 }
 
+/*
 .design-bar::after {
   content: "";
   position: absolute;
-  top: 29%; /* Coboară sub bară */
+  top: 29%;  Coboară sub bară 
   left: 30;
   width: 100%;
-  height: 380px; /* Înălțimea „păturii de lumină” */
+  height: 380px;  Înălțimea „păturii de lumină” 
   background: linear-gradient(
     #b36840,
-    /* Portocaliu translucid */ rgba(255, 149, 0, 0.2),
-    /* Estompare treptată */ rgba(18, 14, 10, 0) /* Complet transparent */
+    /* Portocaliu translucid rgba(189, 57, 24, 0.2),
+    /* Estompare treptată  rgba(18, 14, 10, 0)  Complet transparent 
   );
-  z-index: -1; /* Plasează „pătura” sub restul conținutului */
+  z-index: -1;  Plasează „pătura” sub restul conținutului 
+  
+}*/
+
+/* Containerul pentru carduri */
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite cardurilor să se împartă pe mai multe linii */
+  gap: 30px; /* Spațiu între carduri */
+  margin-top: 50px;
+  justify-content: flex-start; /* Cardurile sunt aliniate la stânga */
+  width: 50%; /* Dimensiunea containerului este redusă pentru a forța cardurile să se așeze pe mai multe linii */
+  margin-left: 10%; /* Poziționare la stânga */
 }
 
-.about-us p {
-  font-size: 0.9rem; /* Dimensiunea textului pentru paragrafe */
-  margin: -100 10px 20px; /* Spațiu uniform pe toate laturile */
-  padding: 0 1px; /* Adaugă padding de 20px pe stânga și dreapta */
-  z-index: -1;
-  color: #fffefd; /* Culoare de bază */
+/* Stil pentru fiecare card */
+.card {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5); /* Fundal semi-transparent */
+  color: rgb(89, 86, 86);
+  width: 45%; /* Cardurile vor ocupa 45% din lățimea containerului */
+  padding: 15px;
+  border-radius: 10px; /* Colțuri rotunjite */
+  text-align: center;
+  box-sizing: border-box;
+  transition: transform 0.1s ease-in-out; /* Tranziție la hover */
+  z-index: 10;
 }
 
-/* Fundalul pentru .about-us */
-.about-us-bg {
+.card:hover {
+  transform: scale(1.07); /* Mărire la hover */
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+/* Icona care iese din card */
+.card-icon {
   position: absolute;
-  top: 0px;
-  left: 0;
+  top: -30px; /* Plasează iconul în afară de card */
+  left: 50%;
+  transform: translateX(-50%); /* Centrează iconul pe orizontală */
+  width: 60px;
+  height: 60px;
+}
+
+.card-icon img {
   width: 100%;
   height: 100%;
-  background: center center, rgba(30, 30, 31, 0.8);
-  background-size: cover; /* Imaginea va fi redimensionată la 50% din dimensiunea elementului */
-  background-position: center; /* Asigură că imaginea este centrată */
-  border-radius: 15px; /* Colțuri rotunjite */
-  border-radius: 15px; /* Colțuri rotunjite pentru fundal */
-  z-index: 1; /* Pune fundalul sub text */
-  opacity: 0.3;
+  object-fit: contain;
 }
 
-/* Bara portocalie de design */
-.design-bar {
-  width: 100%;
-  height: 5px;
-  background-color: orange;
-  margin-bottom: 0px;
-  box-shadow: 0 0 10px orange, 0 0 10px orange, 0 0 30px orange;
-  border-radius: 1px;
-  animation: neon-pulse 1.5s infinite alternate; /* Efect de pulsație continuă */
+/* Responsivitate pentru ecrane medii și mici */
+@media (max-width: 992px) {
+  .card-container {
+    width: 80%; /* Lărgește containerul pentru ecrane medii */
+    justify-content: center; /* Centrează cardurile */
+  }
 }
+
+@media (max-width: 768px) {
+  .card {
+    width: 80%; /* Cardurile ocupă 80% din container pe ecrane mici */
+    margin-bottom: 20px; /* Spațiu între carduri */
+  }
+
+  .card-container {
+    width: 100%; /* Containerul ocupă întreaga lățime pe ecrane mici */
+    justify-content: center; /* Centrează conținutul */
+  }
+}
+
 
 /* Cerc portocaliu */
 .circle {
-  width: 400px; /* Dimensiunea cercului */
-  height: 400px;
-  border: 4px solid #b36840; /* Bordura portocalie */
+  width: 350px; /* Dimensiunea cercului */
+  height: 350px;
   border-radius: 50%; /* Transformă div-ul într-un cerc */
   display: flex;
   flex-direction: column;
@@ -177,13 +250,13 @@ html {
   gap: 5px; /* Distanță între rânduri */
   margin: 0 auto; /* Centrează cercul pe orizontală */
   padding-right: 10px; /* Adaugă un pic de spațiu la dreapta pentru a nu fi lipit de marginea cercului */
-  box-shadow: 0 0 15px 5px rgba(255, 149, 0, 0.75), 0 0 155px 1px #b36840; /* Efect de neon portocaliu */
+  box-shadow: 0 0 15px 5px rgba(86, 68, 43, 0.75), 0 0 155px 1px #5d4335; /* Efect de neon portocaliu */
   overflow: hidden;
 }
 
 /* Stiluri pentru liniile de text */
 .line {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   text-transform: uppercase; /* Stil dramatic */
   text-align: center;
@@ -191,16 +264,51 @@ html {
 
 .line.orange {
   color: #b36840; /* Primele 3 rânduri portocalii */
+  color: transparent; /* Textul devine transparent */
+  background: url("../images/rust.jpg"); /* Imagine de textură de rugina */
+  background-size: 80%; /* Asigură că textura acoperă textul */
+  -webkit-background-clip: text; /* Afișează textura doar pe text (doar pentru browserele bazate pe WebKit) */
+  background-clip: text; /* Afișează textura doar pe text */
+  -webkit-text-fill-color: transparent; /* Asigură transparența textului pe WebKit */
 }
 
 .line.white {
-  color: white; /* Ultimul rând alb */
+  color: rgb(125, 119, 119); /* Ultimul rând gri */
 }
 .bridge-text {
   position: absolute; /* Poziționare absolută pentru a controla exact unde apare pe pagină */
-  bottom: 200px; /* Mută blocul mai jos de marginile paginii */
-  right: -500px; /* Mută blocul mai spre dreapta paginii */
+  bottom: -200px; /* Mută blocul mai jos de marginile paginii */
+  right: 200px; /* Mută blocul mai spre dreapta paginii */
   z-index: 10; /* Asigură că textul va fi deasupra altor elemente, dacă e necesar */
+}
+
+/* Media queries pentru ecrane medii (769px - 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+  .bridge-text {
+    position: static; /* Eliminăm poziționarea absolută */
+    margin: 30px auto; /* Centrează textul pe pagină */
+    text-align: center;
+    margin-top: 10%;
+    z-index: 10;
+  }
+
+  .circle {
+    width: 320px; /* Ușor mai mic decât dimensiunea implicită */
+    height: 320px;
+    padding-right: 5px; /* Ajustăm padding-ul */
+    box-shadow: 0 0 10px 3px rgba(86, 68, 43, 0.75), 0 0 100px 1px #5d4335; /* Mai puțin intens */
+    z-index: 10;
+  }
+
+  .line {
+    font-size: 30px; /* Dimensiune redusă pentru text */
+    z-index: 10;
+  }
+
+  .line.orange {
+    background-size: 100%; /* Ajustăm textura să se potrivească mai bine */
+    z-index: 10;
+  }
 }
 
 /* Media queries pentru ecrane mici */
@@ -214,7 +322,6 @@ html {
   .circle {
     width: 300px; /* Dimensiune mai mică pentru ecrane mici */
     height: 300px;
-    border: 4px solid #b36840;
   }
 
   .line {
@@ -275,7 +382,7 @@ html {
   background-color: #000000; /* Fundalul secțiunii */
   position: relative; /* Poziționare configurabilă */
   overflow: hidden; /* Ascunde orice parte care iese */
-  box-shadow: 0 0 15px 5px rgba(255, 149, 0, 0.75), 0 0 155px 1px #b36840; /* Efect de neon portocaliu */
+  box-shadow: 0 0 5px 1px rgba(255, 149, 0, 0.75), 0 0 50px 1px #b36840; /* Efect de neon portocaliu */
   background: linear-gradient(
     #b36840,
     /* Portocaliu translucid */ rgba(255, 149, 0, 0.2),
@@ -290,11 +397,33 @@ text {
   font-family: Arial, sans-serif; /* Setează fontul */
 }
 
+
+/* Media query pentru dispozitive medii (tablete) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .animated-svg {
+    display: flex; /* Utilizare flexbox pentru centrare */
+    height: 200px; /* Ajustează înălțimea pentru tablete */
+    margin: 0 auto; /* Asigură că secțiunea SVG este centrată pe orizontală */
+    padding: 1px; /* Adaugă puțin spațiu */
+    margin-top: 50%;
+  }
+
+  .animated-svg svg {
+    width: 70%; /* Ajustează dimensiunea SVG-ului pentru tablete */
+    height: auto; /* Păstrează proporțiile corecte */
+    max-width: 500px; /* Dimensiune maximă pentru SVG */
+    justify-content: center; /* Centrează pe orizontală */
+    align-items: center; /* Centrează pe verticală */
+  }
+}
+
+
 /* Media query pentru dispozitive mobile (max-width: 768px) */
 @media (max-width: 768px) {
   .animated-svg {
-    height: 200px; /* Ajustează înălțimea pentru mobil */
+    height: 100px; /* Ajustează înălțimea pentru mobil */
     margin: 10px auto; /* Reducem spațiul pe margini */
+    margin-left: 5.5%;
   }
 
   .animated-svg svg {
@@ -479,19 +608,31 @@ html {
   -ms-transform: rotate(45deg); /* Internet Explorer */
   transform: rotate(45deg); /* Standard */
 }
-/* Ecrane mici (telefoane mobile) */
+/* Ecrane mici (telefoane mobile, max-width: 600px) */
 @media only screen and (max-width: 600px) {
   .about-us {
     padding: 10px; /* Redu padding-ul pentru ecrane mici */
+    text-align: center; /* Centrează textul */
     font-size: 0.8rem; /* Ajustează dimensiunea textului */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrează conținutul pe orizontală */
   }
 
   .about-us h1 {
-    font-size: 2rem; /* Ajustează dimensiunea titlului */
+    font-size: 1.8rem; /* Ajustează dimensiunea titlului */
+    text-align: center; /* Asigură centrare */
   }
 
   .about-us p {
-    font-size: 1rem; /* Ajustează dimensiunea textului pentru paragrafe */
+    font-size: 0.9rem; /* Ajustează dimensiunea textului pentru paragrafe */
+    text-align: justify; /* Centrează textul */
+  }
+
+  .about-us-bg {
+    height: auto; /* Ajustează înălțimea pentru a se potrivi pe ecrane mici */
+    background-size: contain; /* Asigură că imaginea de fundal se potrivește proporțional */
+    margin-bottom: 20px; /* Adaugă spațiu sub fundal */
   }
 }
 
