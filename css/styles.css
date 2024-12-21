@@ -67,15 +67,23 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../images/sfgmobile.png");
-  background-size: contain;
+  background-image: url("../images/sfg.png");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /*background-attachment: fixed; /* Adăugăm această proprietate pentru a fixa imaginea de fundal */
   z-index: 0;
   opacity: 1;
 }
 
+/* Imaginea de fundal pentru mobil */
+@media (max-width: 768px) {
+  .background {
+    background-image: url("../images/sfgmobile.png");
+    background-size: cover; /* Sau `contain` dacă dorești să păstrezi întregul conținut vizibil */
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
 .overlay {
   position: absolute;
   top: 0;

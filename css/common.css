@@ -143,7 +143,7 @@ html {
   position: relative;
   width: 100%;
   height: 2px;
-  background-color: #b4683e;
+  background-color: #846a4a;
   margin-bottom: 0px;
   box-shadow: 0 0 10px rgba(148, 90, 8, 0.75), 0 0 10px rgba(255, 149, 0, 0.75),
     0 0 30px rgba(255, 149, 0, 0.75);
@@ -371,6 +371,7 @@ html {
   display: flex;
   justify-content: center; /* Centrează animația orizontal */
   align-items: center; /* Centrează animația vertical */
+  
   margin: 20px 0; /* Spațiere sus și jos */
   height: 250px; /* Ajustează pentru a crea un spațiu fix */
   overflow: hidden; /* Ascunde orice parte a SVG-ului care iese din secțiune */
@@ -385,13 +386,18 @@ html {
   display: flex;
   justify-content: center; /* Centrează SVG pe orizontală */
   align-items: center; /* Centrează SVG pe verticală */
-  margin: 200px auto; /* Spațiu sus și jos */
+  position: relative;
+  top: 200px;  
+  max-width: 1000px; /* Lățimea maximă a containerului */
+  width: 90%; /* Lățime flexibilă pentru a se adapta pe ecrane mai mici */
+  margin: 0 auto; /* Centrează containerul pe orizontală */
+  padding: 40px; /* Padding în jurul textului */
+  box-sizing: border-box; /* Asigură că padding-ul nu adaugă la dimensiunea totală */
+  
   height: 100px; /* Ajustează pentru dimensiune dorită */
-  width: 100%; /* Asigură lățime completă */
   background-color: #000000; /* Fundalul secțiunii */
-  position: relative; /* Poziționare configurabilă */
   overflow: hidden; /* Ascunde orice parte care iese */
-  box-shadow: 0 0 5px 1px rgba(255, 149, 0, 0.75), 0 0 50px 1px #b36840; /* Efect de neon portocaliu */
+  box-shadow: 0 0 5px 1px rgba(255, 149, 0, 0.75), 0 0 20px 1px #b36840; /* Efect de neon portocaliu */
   background: linear-gradient(
     #b36840,
     /* Portocaliu translucid */ rgba(255, 149, 0, 0.2),
