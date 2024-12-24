@@ -100,17 +100,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;  /* Dimensiunea cercului */
+  width: 60px; /* Dimensiunea cercului */
   height: 60px; /* Dimensiunea cercului */
-  border-radius: 10%;  /* Face-l cerc */
-  border: 0.px solid #d66903;  /* Bordura cercului */
-  z-index: 100;  /* Pune-l deasupra altor elemente */
+  border-radius: 10%; /* Face-l cerc */
+  border: 0px solid #d66903; /* Bordura cercului */
+  z-index: 100; /* Pune-l deasupra altor elemente */
 }
 
 .menu-toggle:hover {
-  transform: scale(1.1);  /* Mărește butonul ușor pentru un efect vizual */
+  transform: scale(1.1); /* Mărește butonul ușor pentru un efect vizual */
   box-shadow: 0 0 15px 0.1px rgba(255, 140, 0, 0.7);
-} 
+}
 
 /* Prima linie */
 .menu-toggle .bar:nth-child(1) {
@@ -129,7 +129,6 @@ body {
   width: 18px;
   height: 2px;
 }
-
 
 .spark,
 .ash {

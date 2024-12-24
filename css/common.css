@@ -175,7 +175,8 @@ html {
   margin-top: 50px;
   justify-content: flex-start; /* Cardurile sunt aliniate la stânga */
   width: 50%; /* Dimensiunea containerului este redusă pentru a forța cardurile să se așeze pe mai multe linii */
-  margin-left: 10%; /* Poziționare la stânga */
+  margin-left: 9%; /* Poziționare la stânga */
+  cursor: pointer;
 }
 
 /* Stil pentru fiecare card */
@@ -249,8 +250,8 @@ html {
 
 /* Cerc portocaliu */
 .circle {
-  width: 350px; /* Dimensiunea cercului */
-  height: 350px;
+  width: 330px; /* Dimensiunea cercului */
+  height: 330px;
   border-radius: 50%; /* Transformă div-ul într-un cerc */
   display: flex;
   flex-direction: column;
@@ -286,8 +287,8 @@ html {
 }
 .bridge-text {
   position: absolute; /* Poziționare absolută pentru a controla exact unde apare pe pagină */
-  bottom: -200px; /* Mută blocul mai jos de marginile paginii */
-  right: 200px; /* Mută blocul mai spre dreapta paginii */
+  bottom: -170px; /* Mută blocul mai jos de marginile paginii */
+  right: 240px; /* Mută blocul mai spre dreapta paginii */
   z-index: 10; /* Asigură că textul va fi deasupra altor elemente, dacă e necesar */
 }
 
@@ -302,8 +303,8 @@ html {
   }
 
   .circle {
-    width: 320px; /* Ușor mai mic decât dimensiunea implicită */
-    height: 320px;
+    width: 300px; /* Ușor mai mic decât dimensiunea implicită */
+    height: 300px;
     padding-right: 5px; /* Ajustăm padding-ul */
     box-shadow: 0 0 10px 3px rgba(86, 68, 43, 0.75), 0 0 100px 1px #5d4335; /* Mai puțin intens */
     z-index: 10;
@@ -326,15 +327,18 @@ html {
     position: static; /* Eliminăm poziționarea absolută */
     margin: 20px auto; /* Centrează cercul pe orizontală */
     text-align: center;
+    z-index: 10;
   }
 
   .circle {
     width: 300px; /* Dimensiune mai mică pentru ecrane mici */
     height: 300px;
+    z-index: 10;
   }
 
   .line {
-    font-size: 18px; /* Dimensiune mai mică a textului */
+    font-size: 30px; /* Dimensiune mai mică a textului */
+    z-index: 10;
   }
 }
 
@@ -728,7 +732,7 @@ html {
   padding: 40; /* Elimină paddingul */
   margin-top: 20%;
   overflow: hidden; /* Elimină orice scroll */
-  background-image: url("../images/anstract-metallic-background-with-grunge-effect.jpg"); /* Imaginea de fundal */
+  /* Imaginea de fundal */
   background-size: contain; /* Păstrează proporțiile imaginii */
   background-repeat: no-repeat; /* Fără repetare */
   background-position: center; /* Centrează imaginea */
