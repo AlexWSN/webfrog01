@@ -78,6 +78,44 @@ if (window.innerWidth <= 768) {
       }
     });
   }
+  // Gestionarea popup-urilor
+  const popups = document.querySelectorAll('.popup');
+  const closeButtons = document.querySelectorAll('.close');
+
+  // Funcția de deschidere a popup-ului
+  function openPopup(popupId) {
+    const popup = document.getElementById(popupId);
+    if (popup) {
+      popup.style.display = "block";
+    }
+  }
+
+  // Funcția de închidere a popup-ului
+  function closePopup() {
+    popups.forEach(popup => {
+      popup.style.display = "none";
+    });
+  }
+
+  // Adaugă evenimentul pentru butoanele de deschidere
+  document.querySelectorAll('.service-btn').forEach(button => {
+    button.addEventListener('click', function() {
+      const popupId = button.getAttribute('data-popup');
+      openPopup(popupId);
+    });
+  });
+
+  // Adaugă evenimentul de închidere pentru fiecare buton 'close'
+  closeButtons.forEach(button => {
+    button.addEventListener('click', closePopup);
+  });
+
+  // Închide popup-ul dacă se dă click în afară
+  window.addEventListener('click', function(event) {
+    if (event.target.classList.contains('popup')) {
+      closePopup();
+    }
+  });
 
   // Procesarea formularului la trimitere
   document
@@ -109,3 +147,4 @@ if (window.innerWidth <= 768) {
       }
     });
 });
+

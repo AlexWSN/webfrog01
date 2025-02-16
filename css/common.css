@@ -136,6 +136,154 @@ html {
     padding: 20px; /* Redu și mai mult padding-ul pe telefoane mici */
   }
 }
+/*SERVICES*/
+
+.services {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.frog-image {
+  width: 100%; /* Ajustează la 100% pentru a ocupa întreaga lățime a containerului */
+  height: auto; /* Pentru a păstra proporțiile imaginii */
+  display: block; /* Asigură-te că imaginea este un element block-level */
+  margin: 0 auto; /* Centrarea orizontală a imaginii */
+  margin-top: 100px;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%; /* Plasează overlay-ul la mijlocul paginii pe verticală */
+  left: 50%; /* Plasează overlay-ul la mijlocul paginii pe orizontală */
+  width: 150%; /* Ajustează lățimea la 100% pentru a ocupa întregul container */
+  height: 100%; /* Asigură-te că înălțimea ocupă întregul container */
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 20px; /* Colțuri rotunjite */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  transform: translate(-50%, -50%); /* Așează elementul perfect în centru */
+  z-index: 3;
+}
+
+.overlay p {
+  font-size: 1rem; /* Dimensiunea textului pentru paragrafe */
+  line-height: 1.6;
+  margin: -100 10px 20px; /* Spațiu uniform pe toate laturile */
+  padding: 0 1px; /* Adaugă padding de 20px pe stânga și dreapta */
+  z-index: 10;
+  position: relative;
+  color: #665b4f; /* Culoare de bază */
+  font-family: Arial, sans-serif;
+}
+
+.overlay h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #665b4f; /* Culoare de bază */
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.service-btn {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 130px;
+  background: rgba(8, 8, 8, 0.7);
+  border: 1px solid #623b0d;
+  border-radius: 20px;
+  color: #665b4f;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 3;
+  gap: 18px; /* Adaugă spațiu între imagine și text */
+}
+
+.btn-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.btn-text {
+  font-weight: bold;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  font-family: Arial, sans-serif;
+}
+
+.service-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.service-btn img {
+  width: 50px;
+  height: 60px;
+  margin-bottom: 5px;
+}
+
+.service-btn span {
+  font-size: 10px;
+}
+
+/* POPUP STYLING */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  height: 400px;
+  background: rgba(0, 0, 0, 0.85); /* Negru semi-transparent */
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid #553514; /* Margine portocalie */
+  box-shadow: 0 0 15px rgba(157, 80, 4, 0.5);
+  z-index: 1000;
+  overflow: auto;
+}
+
+.popup-content {
+  text-align: justify;
+  position: relative;
+  padding-right: 10px;
+  font-family: Arial, sans-serif;
+}
+.popup p {
+  font-size: 13px;
+  text-align: justify; /* Justifică textul */
+  line-height: 1.6;
+  margin-top: 20%;
+}
+.close {
+  position: absolute;
+  top: 10px; /* 10px față de marginea de sus a pop-up-ului */
+  right: 10px;
+  color: #ff8000;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #ffcc80; /* O nuanță mai deschisă de portocaliu la hover */
+}
 
 /* Bara portocalie de design */
 .design-bar {
@@ -246,8 +394,6 @@ html {
   }
 }
 
-
-
 /* Cerc portocaliu */
 .circle {
   width: 330px; /* Dimensiunea cercului */
@@ -268,7 +414,6 @@ html {
 .line {
   font-size: 40px;
   font-weight: bold;
-  text-transform: uppercase; /* Stil dramatic */
   text-align: center;
 }
 
@@ -375,7 +520,7 @@ html {
   display: flex;
   justify-content: center; /* Centrează animația orizontal */
   align-items: center; /* Centrează animația vertical */
-  
+
   margin: 20px 0; /* Spațiere sus și jos */
   height: 250px; /* Ajustează pentru a crea un spațiu fix */
   overflow: hidden; /* Ascunde orice parte a SVG-ului care iese din secțiune */
@@ -391,13 +536,13 @@ html {
   justify-content: center; /* Centrează SVG pe orizontală */
   align-items: center; /* Centrează SVG pe verticală */
   position: relative;
-  top: 200px;  
+  top: 200px;
   max-width: 1000px; /* Lățimea maximă a containerului */
   width: 90%; /* Lățime flexibilă pentru a se adapta pe ecrane mai mici */
   margin: 0 auto; /* Centrează containerul pe orizontală */
   padding: 40px; /* Padding în jurul textului */
   box-sizing: border-box; /* Asigură că padding-ul nu adaugă la dimensiunea totală */
-  
+
   height: 100px; /* Ajustează pentru dimensiune dorită */
   background-color: #000000; /* Fundalul secțiunii */
   overflow: hidden; /* Ascunde orice parte care iese */
@@ -412,7 +557,7 @@ text {
   /* Folosește dimensiuni relative la lățimea ferestrei */
   font-weight: bold;
   text-anchor: middle; /* Centrează textul pe orizontală */
-   /* Centrează textul pe verticală */
+  /* Centrează textul pe verticală */
   font-family: Arial, sans-serif; /* Setează fontul */
 }
 
@@ -449,7 +594,6 @@ text {
     height: auto; /* Păstrează proporțiile corecte */
   }
 }
-
 
 /* Stilul pentru imaginea de fundal */
 .background-image {
@@ -723,6 +867,768 @@ html {
 }
 
 /* Formularul de contact */
+
+.contact-section {
+  display: flex; /* Activează flexbox */
+  justify-content: center; /* Centrează pe orizontală */
+  align-items: center; /* Centrează pe verticală */
+  flex-direction: column; /* Asigură că formularul și alte elemente sunt stivuite */
+  height: 40vh; /* Setează înălțimea secțiunii să ocupe întreaga fereastră */
+  padding: 40; /* Elimină paddingul */
+  margin-top: 20%;
+
+  /* Imaginea de fundal */
+  background-size: contain; /* Păstrează proporțiile imaginii */
+  background-repeat: no-repeat; /* Fără repetare */
+  background-position: center; /* Centrează imaginea */
+  position: relative; /* Pentru controlul poziției */
+  z-index: 4;
+}
+
+.contact-section h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: #ff9500;
+}
+
+.contact-form {
+  align-items: center;
+  width: 60%; /* Ajustează dimensiunea formularului */
+  max-width: 300px; /* Dimensiune maximă a formularului */
+  padding: 10px; /* Spațiu interior */
+  display: flex;
+  flex-direction: column; /* Elemente stivuite vertical */
+  gap: 1px; /* Spațiu între elemente */
+  background: rgba(36, 36, 36, 0.8); /* Fundal translucid*/
+  border-radius: 10px; /* Colțuri rotunjite */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Umbră pentru adâncime */
+  position: relative;
+  z-index: 1; /* Formularul apare deasupra imaginii */
+}
+
+/* Global styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000000; /* Fundal negru pentru contrast */
+  font-family: "Bona Nova SC", serif; /* Font elegant */
+}
+
+/* Stilul pentru animația de fundal */
+.background {
+  position: fixed; /* Folosim fixed pentru a asigura animația pe toate paginile */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2; /* Asigură-te că animația este deasupra secțiunii .about-us */
+}
+
+/* Animațiile pentru scântei și cenușă */
+.spark,
+.ash {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2; /* Ajustează opacitatea pentru scântei și cenușă */
+}
+
+.spark {
+  width: 5px;
+  height: 5px;
+  background-color: orange;
+  animation: moveSpark 0.1s linear infinite;
+}
+
+.ash {
+  width: 1px;
+  height: 10px;
+  background-color: #b5651d;
+  opacity: 0.2;
+  animation: moveAsh 5s linear infinite;
+}
+
+/* Keyframes pentru animații */
+@keyframes moveSpark {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0.5);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5; /* Scânteia dispare treptat */
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes moveAsh {
+  0% {
+    transform: translateY(100vh) translateX(-100px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* ABOUT US */
+
+.about-us-content {
+  max-width: 1200px; /* Lățimea maximă a containerului */
+  width: 90%; /* Lățime flexibilă pentru a se adapta pe ecrane mai mici */
+  margin: 0 auto; /* Centrează containerul pe orizontală */
+  padding: 40px; /* Padding în jurul textului */
+  box-sizing: border-box; /* Asigură că padding-ul nu adaugă la dimensiunea totală */
+  position: relative;
+  z-index: 10;
+}
+.about-us p {
+  font-size: 1rem; /* Dimensiunea textului pentru paragrafe */
+  margin: -100 10px 20px; /* Spațiu uniform pe toate laturile */
+  padding: 0 1px; /* Adaugă padding de 20px pe stânga și dreapta */
+  z-index: 10;
+  position: relative;
+  color: #665b4f; /* Culoare de bază */
+}
+
+.about-us {
+  /* Modificare din absolute în relative pentru a permite mai ușor alinierea */
+  max-width: 1200px;
+  padding: 90px;
+  text-align: justify; /* Aliniează textul */
+  line-height: 1.4; /* Spațiu mai mare între linii pentru lizibilitate */
+  margin: 0 auto; /* Centrează elementul .about-us */
+}
+
+.about-us h1 {
+  font-size: 2rem; /* Dimensiune mai mare a textului */
+  text-align: center; /* Centrează textul orizontal */
+  color: transparent; /* Textul devine transparent */
+  background: url("../images/rust.jpg"); /* Imagine de textură de rugina */
+  background-size: 20%; /* Asigură că textura acoperă bine textul */
+  -webkit-background-clip: text; /* Afișează textura doar pe text (pentru WebKit) */
+  background-clip: text; /* Afișează textura doar pe text */
+  -webkit-text-fill-color: transparent; /* Asigură transparența textului pe WebKit */
+  z-index: 10; /* Asigură vizibilitatea deasupra altor elemente */
+  margin: 0; /* Elimină marginile implicite */
+  margin-bottom: 5%;
+}
+
+@media (max-width: 768px) {
+  .about-us h1 {
+    font-size: 1.5rem; /* Micșorăm dimensiunea textului pe ecrane mai mici */
+    margin-top: 15%; /* Ajustăm marginea superioară pentru ecrane mai mici */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us h1 {
+    font-size: 1.2rem; /* Micșorăm și mai mult dimensiunea textului pe ecrane foarte mici */
+    margin-top: 20%; /* Ajustăm marginea superioară pentru telefoane mici */
+  }
+}
+@media (max-width: 768px) {
+  .about-us-content {
+    width: 90%; /* Ajustează lățimea containerului pe ecrane medii */
+    padding: 30px; /* Redu padding-ul pe ecrane mai mici */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us-content {
+    width: 95%; /* Ajustează lățimea containerului pe ecrane foarte mici */
+    padding: 20px; /* Redu și mai mult padding-ul pe telefoane mici */
+  }
+}
+
+/* Bara portocalie de design */
+.design-bar {
+  margin: 0 auto 20px; /* Centrează bara și adaugă spațiu dedesubt */
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: #846a4a;
+  margin-bottom: 0px;
+  box-shadow: 0 0 10px rgba(148, 90, 8, 0.75), 0 0 10px rgba(255, 149, 0, 0.75),
+    0 0 30px rgba(255, 149, 0, 0.75);
+  border-radius: 1px;
+}
+
+/*
+.design-bar::after {
+  content: "";
+  position: absolute;
+  top: 29%;  Coboară sub bară 
+  left: 30;
+  width: 100%;
+  height: 380px;  Înălțimea „păturii de lumină” 
+  background: linear-gradient(
+    #b36840,
+    /* Portocaliu translucid rgba(189, 57, 24, 0.2),
+    /* Estompare treptată  rgba(18, 14, 10, 0)  Complet transparent 
+  );
+  z-index: -1;  Plasează „pătura” sub restul conținutului 
+  
+}*/
+
+/* Containerul pentru carduri */
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite cardurilor să se împartă pe mai multe linii */
+  gap: 30px; /* Spațiu între carduri */
+  margin-top: 50px;
+  justify-content: flex-start; /* Cardurile sunt aliniate la stânga */
+  width: 50%; /* Dimensiunea containerului este redusă pentru a forța cardurile să se așeze pe mai multe linii */
+  margin-left: 9%; /* Poziționare la stânga */
+  cursor: pointer;
+}
+
+/* Stil pentru fiecare card */
+.card {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5); /* Fundal semi-transparent */
+  color: rgb(89, 86, 86);
+  width: 45%; /* Cardurile vor ocupa 45% din lățimea containerului */
+  padding: 15px;
+  border-radius: 10px; /* Colțuri rotunjite */
+  text-align: center;
+  box-sizing: border-box;
+  transition: transform 0.1s ease-in-out; /* Tranziție la hover */
+  z-index: 10;
+}
+
+.card:hover {
+  transform: scale(1.07); /* Mărire la hover */
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+/* Icona care iese din card */
+.card-icon {
+  position: absolute;
+  top: -30px; /* Plasează iconul în afară de card */
+  left: 50%;
+  transform: translateX(-50%); /* Centrează iconul pe orizontală */
+  width: 60px;
+  height: 60px;
+}
+
+.card-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Responsivitate pentru ecrane medii și mici */
+@media (max-width: 992px) {
+  .card-container {
+    display: flex; /* Asigură că este folosit Flexbox */
+    flex-wrap: wrap; /* Permite cardurilor să se împartă pe mai multe linii */
+    justify-content: center; /* Centrează cardurile pe orizontală */
+    width: 80%; /* Lărgește containerul pentru ecrane medii */
+    margin: 0 auto; /* Centrează containerul pe orizontală */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 80%; /* Cardurile ocupă 80% din container pe ecrane mici */
+    margin-bottom: 20px; /* Spațiu între carduri */
+    margin-left: auto; /* Asigură că cardurile se alină corect pe orizontală */
+    margin-right: auto; /* Asigură că cardurile se alină corect pe orizontală */
+  }
+
+  .card-container {
+    display: flex; /* Asigură că este folosit Flexbox */
+    flex-wrap: wrap; /* Permite cardurilor să se împartă pe mai multe linii */
+    justify-content: center; /* Centrează cardurile pe orizontală */
+    width: 100%; /* Containerul ocupă întreaga lățime pe ecrane mici */
+    margin: 0 auto; /* Centrează containerul pe orizontală */
+  }
+}
+
+/* Cerc portocaliu */
+.circle {
+  width: 330px; /* Dimensiunea cercului */
+  height: 330px;
+  border-radius: 50%; /* Transformă div-ul într-un cerc */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrează liniile în cerc pe verticală */
+  align-items: center; /* Alinierea textului la dreapta în cerc */
+  gap: 5px; /* Distanță între rânduri */
+  margin: 0 auto; /* Centrează cercul pe orizontală */
+  padding-right: 10px; /* Adaugă un pic de spațiu la dreapta pentru a nu fi lipit de marginea cercului */
+  box-shadow: 0 0 15px 5px rgba(86, 68, 43, 0.75), 0 0 155px 1px #5d4335; /* Efect de neon portocaliu */
+  overflow: hidden;
+}
+
+/* Stiluri pentru liniile de text */
+.line {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.line.orange {
+  color: #b36840; /* Primele 3 rânduri portocalii */
+  color: transparent; /* Textul devine transparent */
+  background: url("../images/rust.jpg"); /* Imagine de textură de rugina */
+  background-size: 80%; /* Asigură că textura acoperă textul */
+  -webkit-background-clip: text; /* Afișează textura doar pe text (doar pentru browserele bazate pe WebKit) */
+  background-clip: text; /* Afișează textura doar pe text */
+  -webkit-text-fill-color: transparent; /* Asigură transparența textului pe WebKit */
+}
+
+.line.white {
+  color: rgb(125, 119, 119); /* Ultimul rând gri */
+}
+.bridge-text {
+  position: absolute; /* Poziționare absolută pentru a controla exact unde apare pe pagină */
+  bottom: -170px; /* Mută blocul mai jos de marginile paginii */
+  right: 240px; /* Mută blocul mai spre dreapta paginii */
+  z-index: 10; /* Asigură că textul va fi deasupra altor elemente, dacă e necesar */
+}
+
+/* Media queries pentru ecrane medii (769px - 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+  .bridge-text {
+    position: static; /* Eliminăm poziționarea absolută */
+    margin: 30px auto; /* Centrează textul pe pagină */
+    text-align: center;
+    margin-top: 10%;
+    z-index: 10;
+  }
+
+  .circle {
+    width: 300px; /* Ușor mai mic decât dimensiunea implicită */
+    height: 300px;
+    padding-right: 5px; /* Ajustăm padding-ul */
+    box-shadow: 0 0 10px 3px rgba(86, 68, 43, 0.75), 0 0 100px 1px #5d4335; /* Mai puțin intens */
+    z-index: 10;
+  }
+
+  .line {
+    font-size: 30px; /* Dimensiune redusă pentru text */
+    z-index: 10;
+  }
+
+  .line.orange {
+    background-size: 100%; /* Ajustăm textura să se potrivească mai bine */
+    z-index: 10;
+  }
+}
+
+/* Media queries pentru ecrane mici */
+@media (max-width: 768px) {
+  .bridge-text {
+    position: static; /* Eliminăm poziționarea absolută */
+    margin: 20px auto; /* Centrează cercul pe orizontală */
+    text-align: center;
+    z-index: 10;
+  }
+
+  .circle {
+    width: 300px; /* Dimensiune mai mică pentru ecrane mici */
+    height: 300px;
+    z-index: 10;
+  }
+
+  .line {
+    font-size: 30px; /* Dimensiune mai mică a textului */
+    z-index: 10;
+  }
+}
+
+/* Stilul pentru buton HOME*/
+
+.button {
+  display: inline-block;
+  width: 98.5%; /* Corectat pentru a nu fi prea mare */
+  height: 50px;
+  background-color: transparent;
+  color: rgb(166, 160, 160);
+  border-radius: 12px; /* Colțuri rotunjite */
+  text-align: center;
+  line-height: 50px;
+  text-decoration: none;
+  font-size: 16px;
+  position: fixed;
+  overflow: hidden;
+  z-index: 20; /* Asigură că textul butonului este deasupra gradientului */
+  margin: 10px;
+  opacity: 0.6;
+  font-weight: 400; /*  */
+  top: 10px;
+  transition: opacity 0.3s ease, background-color 0.3s ease; /* Transitie pentru opacitate și fundal */
+  cursor: pointer; /* Arată cursorul ca pointer pentru interactivitate*/
+}
+
+.button:hover {
+  box-shadow: 0px 0px 16px 1px rgba(255, 140, 0, 0.6);
+}
+
+/* Stiluri pentru secțiunea SVG */
+.animated-svg {
+  display: flex;
+  justify-content: center; /* Centrează animația orizontal */
+  align-items: center; /* Centrează animația vertical */
+
+  margin: 20px 0; /* Spațiere sus și jos */
+  height: 250px; /* Ajustează pentru a crea un spațiu fix */
+  overflow: hidden; /* Ascunde orice parte a SVG-ului care iese din secțiune */
+  background-color: #0a0909;
+}
+
+.animated-svg svg {
+  max-width: 100%; /* Asigură scalarea SVG-ului pe ecrane mici */
+  height: auto; /* Păstrează proporțiile SVG-ului */
+}
+.animated-svg {
+  display: flex;
+  justify-content: center; /* Centrează SVG pe orizontală */
+  align-items: center; /* Centrează SVG pe verticală */
+  position: relative;
+  top: 200px;
+  max-width: 1000px; /* Lățimea maximă a containerului */
+  width: 90%; /* Lățime flexibilă pentru a se adapta pe ecrane mai mici */
+  margin: 0 auto; /* Centrează containerul pe orizontală */
+  padding: 40px; /* Padding în jurul textului */
+  box-sizing: border-box; /* Asigură că padding-ul nu adaugă la dimensiunea totală */
+
+  height: 100px; /* Ajustează pentru dimensiune dorită */
+  background-color: #000000; /* Fundalul secțiunii */
+  overflow: hidden; /* Ascunde orice parte care iese */
+  box-shadow: 0 0 5px 1px rgba(255, 149, 0, 0.75), 0 0 20px 1px #b36840; /* Efect de neon portocaliu */
+  background: linear-gradient(
+    #b36840,
+    /* Portocaliu translucid */ rgba(255, 149, 0, 0.2),
+    /* Estompare treptată */ rgba(18, 14, 10, 0) /* Complet transparent */
+  );
+}
+text {
+  /* Folosește dimensiuni relative la lățimea ferestrei */
+  font-weight: bold;
+  text-anchor: middle; /* Centrează textul pe orizontală */
+  /* Centrează textul pe verticală */
+  font-family: Arial, sans-serif; /* Setează fontul */
+}
+
+/* Media query pentru dispozitive medii (tablete) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .animated-svg {
+    display: flex; /* Flexbox pentru centrare */
+    justify-content: center; /* Centrează SVG-ul pe orizontală */
+    align-items: center; /* Centrează SVG-ul pe verticală */
+    height: 200px; /* Ajustează înălțimea pentru tablete */
+    margin: 0 auto; /* Centrează secțiunea SVG pe orizontală */
+    padding: 1px; /* Adaugă puțin spațiu */
+  }
+
+  .animated-svg svg {
+    width: 70%; /* Ajustează dimensiunea SVG-ului pentru tablete */
+    height: auto; /* Păstrează proporțiile corecte */
+    max-width: 500px; /* Dimensiune maximă pentru SVG */
+  }
+}
+
+/* Media query pentru dispozitive mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .animated-svg {
+    display: flex; /* Flexbox pentru centrare */
+    justify-content: center; /* Centrează SVG-ul pe orizontală */
+    align-items: center; /* Centrează SVG-ul pe verticală */
+    height: 100px; /* Ajustează înălțimea pentru mobil */
+    margin: 10px auto; /* Reducem spațiul pe margini */
+  }
+
+  .animated-svg svg {
+    width: 90%; /* Asigură că SVG-ul rămâne proporțional pe ecrane mici */
+    height: auto; /* Păstrează proporțiile corecte */
+  }
+}
+
+/* Stilul pentru imaginea de fundal */
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1; /* Plasează imaginea sub animație și buton */
+  opacity: 0.6; /* Setează opacitatea la 0.6 pentru vizibilitate */
+  background-image: url("../images/background.png");
+}
+
+/* PORTOFOLIU */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+/* Stil pentru slide-uri și imagini */
+.portfolio-slides {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Începe de sus */
+  width: 100%;
+  position: relative;
+  overflow-y: auto; /* Permite scroll vertical */
+  z-index: 2;
+  padding: 10px; /* Adaugă padding pentru a evita marginile */
+  margin-top: 80px;
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto; /* Permite înălțimea automată */
+  margin-bottom: 40px; /* Adaugă spațiu între slide-uri */
+}
+
+.slide img {
+  max-width: 100%; /* Asigură că imaginea nu depășește lățimea containerului */
+  max-height: 100vh; /* Limitează înălțimea imaginii la înălțimea viewport-ului */
+  height: auto; /* Păstrează proporțiile imaginii */
+  width: auto; /* Păstrează proporțiile imaginii */
+  object-fit: contain; /* Asigură că imaginea este redimensionată pentru a se potrivi în container fără a fi distorsionată */
+}
+
+.sparks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Scântei să nu interfereze cu clicurile */
+  z-index: 2; /* Între fundal și formular */
+}
+
+/* Adăugare will-change pentru animații */
+.spark,
+.ash {
+  will-change: transform, opacity; /* Îmbunătățire performanță animație */
+}
+
+/* Ecrane mici (telefoane mobile) */
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .slide img {
+    max-width: 100%;
+    max-height: 50vh; /* Ajustează înălțimea imaginii */
+  }
+}
+/* Stilul pentru imaginea de fundal pe mobil */
+@media only screen and (max-width: 600px) {
+  .background-image {
+    position: fixed; /* Rămâne fixă pe ecran */
+  }
+}
+
+/* Ecrane medii (tablete) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+
+  .slide img {
+    max-width: 90%;
+    max-height: 60vh;
+  }
+}
+
+/* Ecrane mari (desktopuri) */
+@media only screen and (min-width: 1025px) {
+  body {
+    font-size: 18px;
+  }
+
+  .slide img {
+    max-width: 80%;
+    max-height: 80vh;
+  }
+}
+/* Media Queries pentru ajustări */
+@media only screen and (max-width: 600px) {
+  .button {
+    height: 40px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .button {
+    height: 45px;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .button {
+    height: 50px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .background-image {
+    background-size: cover; /* Continuă să acopere ecranul pe dispozitive mai mici */
+  }
+}
+
+@media (max-width: 480px) {
+  .background-image {
+    background-size: cover; /* Poate fi necesar să ajustezi la contain pentru ecrane foarte mici */
+  }
+}
+@keyframes subtleGlitch {
+  0% {
+    opacity: 1;
+  }
+  1% {
+    opacity: 0.8;
+  }
+  2% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 1px 1px 2px #502804, -1px -1px 2px rgba(0, 0, 0, 0.8),
+      3px 3px 5px rgba(0, 0, 0, 0.5);
+  }
+  0.1% {
+    text-shadow: 1px 1px 1px #f88e0e,
+      /* Luminozitate vibrantă pe margini */ -2px -2px 5px
+        rgba(255, 140, 0, 0.6),
+      4px 4px 10px rgba(0, 0, 0, 0.7);
+  }
+}
+.element {
+  -webkit-transform: rotate(45deg); /* Safari/Chrome */
+  -moz-transform: rotate(45deg); /* Firefox */
+  -ms-transform: rotate(45deg); /* Internet Explorer */
+  transform: rotate(45deg); /* Standard */
+}
+/* Ecrane mici (telefoane mobile, max-width: 600px) */
+@media only screen and (max-width: 600px) {
+  .about-us {
+    padding: 10px; /* Redu padding-ul pentru ecrane mici */
+    text-align: center; /* Centrează textul */
+    font-size: 0.8rem; /* Ajustează dimensiunea textului */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrează conținutul pe orizontală */
+  }
+
+  .about-us h1 {
+    font-size: 1.8rem; /* Ajustează dimensiunea titlului */
+    text-align: center; /* Asigură centrare */
+  }
+
+  .about-us p {
+    font-size: 0.9rem; /* Ajustează dimensiunea textului pentru paragrafe */
+    text-align: justify; /* Centrează textul */
+  }
+
+  .about-us-bg {
+    height: auto; /* Ajustează înălțimea pentru a se potrivi pe ecrane mici */
+    background-size: contain; /* Asigură că imaginea de fundal se potrivește proporțional */
+    margin-bottom: 20px; /* Adaugă spațiu sub fundal */
+  }
+}
+
+/* Ecrane medii (tablete) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .about-us {
+    padding: 20px; /* Ajustează padding-ul pentru tablete */
+    font-size: 0.9rem; /* Ajustează dimensiunea textului */
+  }
+
+  .about-us h1 {
+    font-size: 2.5rem; /* Ajustează dimensiunea titlului */
+  }
+
+  .about-us p {
+    font-size: 0.9rem; /* Ajustează dimensiunea textului pentru paragrafe */
+  }
+
+  .about-us-bg {
+    height: 100%; /* Asigură că imaginea de fundal se potrivește */
+    background-size: cover; /* Asigură că imaginea acoperă ecranul */
+  }
+}
+/* Stiluri pentru modal */
+.modal {
+  display: none; /* Ascunde modalul în mod implicit */
+  position: fixed;
+  z-index: 100; /* Asigură-te că modalul este deasupra conținutului */
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9); /* Fundal semi-transparent */
+}
+.modal img {
+  display: block; /* Asigură-te că imaginea este vizibilă */
+}
+
+.modal .alt-text {
+  display: none; /* Ascunde textul alternativ */
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  text-align: center;
+  color: #ccc;
+  padding: 10px;
+  font-size: 16px;
+}
+
+/* Formularul de contact */
+
 .contact-section {
   display: flex; /* Activează flexbox */
   justify-content: center; /* Centrează pe orizontală */
@@ -731,7 +1637,7 @@ html {
   height: 80vh; /* Setează înălțimea secțiunii să ocupe întreaga fereastră */
   padding: 40; /* Elimină paddingul */
   margin-top: 20%;
-  overflow: hidden; /* Elimină orice scroll */
+
   /* Imaginea de fundal */
   background-size: contain; /* Păstrează proporțiile imaginii */
   background-repeat: no-repeat; /* Fără repetare */
@@ -798,6 +1704,109 @@ html {
 .contact-form textarea:autofill {
   background-color: #444343; /* Fundal gri */
   color: #968c8c;
+}
+/* Suprascrie stilurile implicite pentru autofill */
+.contact-form input:-webkit-autofill,
+.contact-form textarea:-webkit-autofill {
+  background-color: #cac9c6 !important; /* Fundal consistent */
+  color: #333 !important; /* Culoarea textului */
+  border: 1px solid #7a7360 !important; /* Bordura */
+  box-shadow: 0 0 0px 1000px #cac9c6 inset !important; /* Asigură umplerea completă */
+  transition: background-color 5000s ease-in-out 0s; /* Evită resetarea rapidă */
+}
+
+/* Pentru alte browsere */
+.contact-form input:autofill,
+.contact-form textarea:autofill {
+  background-color: #cac9c6 !important;
+  color: #333 !important;
+  border: 1px solid #7a7360 !important;
+  box-shadow: 0 0 0px 1000px #cac9c6 inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.contact-form button {
+  padding: 3px 20px;
+  font-size: 16px;
+  color: #f1efef;
+  background-color: #494a4b;
+  border: none;
+  border-radius: 5px;
+  width: 70%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #784d02;
+}
+
+/* Stiluri pentru mesajul de succes sau eroare */
+#formResponse {
+  margin-top: 15px;
+  font-size: 16px;
+  width: 60%;
+}
+
+.modal {
+  display: none;
+  /* alte stiluri pentru modal */
+}
+
+.modal.show {
+  display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 9px;
+  font-size: 14px;
+  border: 1px solid #7a7360;
+  border-radius: 3px;
+  width: 70%;
+  box-sizing: border-box;
+  background-color: #cac9c6; /* Culoare fundal câmpuri de text */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #de7906;
+  outline: none;
+}
+
+.contact-form input:-webkit-autofill,
+.contact-form textarea:-webkit-autofill {
+  background-color: #f0f0f0; /* Gri sau altă culoare dorită */
+  color: #e5dada; /* Text color */
+  border: 1px solid #ccc; /* Bordura */
+  box-shadow: 0 0 0px 1000px #f0f0f0 inset; /* Fundal consistent */
+  transition: background-color 5000s ease-in-out 0s; /* Evită ca stilurile implicite să revină */
+}
+
+/* Pentru alte browsere compatibile */
+.contact-form input:autofill,
+.contact-form textarea:autofill {
+  background-color: #444343; /* Fundal gri */
+  color: #968c8c;
+}
+/* Suprascrie stilurile implicite pentru autofill */
+.contact-form input:-webkit-autofill,
+.contact-form textarea:-webkit-autofill {
+  background-color: #cac9c6 !important; /* Fundal consistent */
+  color: #333 !important; /* Culoarea textului */
+  border: 1px solid #7a7360 !important; /* Bordura */
+  box-shadow: 0 0 0px 1000px #cac9c6 inset !important; /* Asigură umplerea completă */
+  transition: background-color 5000s ease-in-out 0s; /* Evită resetarea rapidă */
+}
+
+/* Pentru alte browsere */
+.contact-form input:autofill,
+.contact-form textarea:autofill {
+  background-color: #cac9c6 !important;
+  color: #333 !important;
+  border: 1px solid #7a7360 !important;
+  box-shadow: 0 0 0px 1000px #cac9c6 inset !important;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .contact-form button {
