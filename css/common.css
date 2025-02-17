@@ -284,6 +284,103 @@ html {
 .close:hover {
   color: #ffcc80; /* O nuanță mai deschisă de portocaliu la hover */
 }
+@media (max-width: 768px) {
+  /* 🔹 Elimină scroll-ul lateral */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* 🔹 Ajustează secțiunea de servicii */
+  .services {
+    max-width: 100%;
+    padding: 15px;
+    margin-top: 30%;
+
+  }
+
+  /* 🔹 Optimizează imaginea broaștei */
+  .frog-image {
+    width: 100%;
+    max-width: 250px;
+    margin-top: 50px;
+  }
+
+  /* 🔹 Corectează overlay-ul */
+  .overlay {
+    width: 90%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .overlay h2 {
+    font-size: 20px;
+  }
+
+  .overlay p {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+
+  /* 🔹 Aranjare iconițe 2x2 */
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 butoane pe rând */
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .service-btn {
+    width: 100%; /* Ocupă toată lățimea coloanei */
+    height: auto;
+    padding: 15px;
+    font-size: 12px;
+  }
+
+  .btn-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .btn-text {
+    font-size: 12px;
+  }
+
+  /* 🔹 Stilizează pop-up-ul */
+  .popup {
+    width: 90%;
+    height: auto;
+    max-height: 90vh; /* Evită depășirea ecranului */
+    padding: 15px;
+  }
+
+  .popup p {
+    font-size: 12px;
+    margin-top: 10%;
+  }
+
+  .close {
+    top: 5px;
+    right: 5px;
+    font-size: 18px;
+  }
+
+  
+
+  /* 🔹 Evită suprapunerea butonului Home */
+  .home-btn {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+  }
+}
 
 /* Bara portocalie de design */
 .design-bar {
@@ -873,9 +970,7 @@ html {
   justify-content: center; /* Centrează pe orizontală */
   align-items: center; /* Centrează pe verticală */
   flex-direction: column; /* Asigură că formularul și alte elemente sunt stivuite */
-  height: 40vh; /* Setează înălțimea secțiunii să ocupe întreaga fereastră */
-  padding: 40; /* Elimină paddingul */
-  margin-top: 20%;
+  margin-top: 0;
 
   /* Imaginea de fundal */
   background-size: contain; /* Păstrează proporțiile imaginii */
@@ -1636,7 +1731,7 @@ html {
   flex-direction: column; /* Asigură că formularul și alte elemente sunt stivuite */
   height: 80vh; /* Setează înălțimea secțiunii să ocupe întreaga fereastră */
   padding: 40; /* Elimină paddingul */
-  margin-top: 20%;
+  margin-top: 0%;
 
   /* Imaginea de fundal */
   background-size: contain; /* Păstrează proporțiile imaginii */
