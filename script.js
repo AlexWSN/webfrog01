@@ -21,18 +21,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 200);
 
   // Modifică intervalul animațiilor particulelor pe mobil
-if (window.innerWidth <= 768) {
-  setInterval(() => {
-    createParticle("spark");
-    createParticle("ash");
-  }, 300); // Crește intervalul pentru a reduce sarcina
-} else {
-  setInterval(() => {
-    createParticle("spark");
-    createParticle("ash");
-  }, 200); // Păstrează intervalul mai scurt pe desktop
-}
-
+  if (window.innerWidth <= 768) {
+    setInterval(() => {
+      createParticle("spark");
+      createParticle("ash");
+    }, 300); // Crește intervalul pentru a reduce sarcina
+  } else {
+    setInterval(() => {
+      createParticle("spark");
+      createParticle("ash");
+    }, 200); // Păstrează intervalul mai scurt pe desktop
+  }
 
   // Obținem modalul și elementele asociate
   var modal = document.getElementById("imageModal");
@@ -62,6 +61,8 @@ if (window.innerWidth <= 768) {
 
   // Codul pentru meniul burger
   const burger = document.querySelector(".menu-toggle");
+  const sideMenu = document.querySelector(".side-menu");
+  const closeMenu = document.querySelector(".close-menu");
   const navMenu = document.querySelector(".button-container");
 
   // Verificăm dacă butonul burger și meniul există înainte de a le manipula
@@ -78,9 +79,41 @@ if (window.innerWidth <= 768) {
       }
     });
   }
+  // Verificăm dacă butonul burger și meniul există înainte de a le manipula
+  if (burger && sideMenu) {
+    // Când se apasă pe butonul hamburger (pentru mobil)
+    burger.addEventListener("click", function () {
+      console.log("Butonul hamburger a fost apăsat.");
+      sideMenu.classList.toggle("active"); // Activează meniul lateral
+
+      // Verifică dacă meniul lateral este activ
+      if (sideMenu.classList.contains("active")) {
+        console.log("Meniul lateral este acum activ.");
+      } else {
+        console.log("Meniul lateral este acum inactiv.");
+      }
+    });
+  }
+
+  // Închide meniul lateral atunci când apesi pe butonul "Close" (pe mobil)
+  if (closeMenu) {
+    closeMenu.addEventListener("click", function () {
+      sideMenu.classList.remove("active");
+      console.log("Meniul lateral a fost închis.");
+    });
+  }
+
+  // Închide meniul dacă dai click în afara lui (pe mobil)
+  document.addEventListener("click", function (event) {
+    if (!sideMenu.contains(event.target) && !burger.contains(event.target)) {
+      sideMenu.classList.remove("active");
+      console.log("Meniul lateral a fost închis (click în afara meniului).");
+    }
+  });
+
   // Gestionarea popup-urilor
-  const popups = document.querySelectorAll('.popup');
-  const closeButtons = document.querySelectorAll('.close');
+  const popups = document.querySelectorAll(".popup");
+  const closeButtons = document.querySelectorAll(".close");
 
   // Funcția de deschidere a popup-ului
   function openPopup(popupId) {
@@ -92,27 +125,27 @@ if (window.innerWidth <= 768) {
 
   // Funcția de închidere a popup-ului
   function closePopup() {
-    popups.forEach(popup => {
+    popups.forEach((popup) => {
       popup.style.display = "none";
     });
   }
 
   // Adaugă evenimentul pentru butoanele de deschidere
-  document.querySelectorAll('.service-btn').forEach(button => {
-    button.addEventListener('click', function() {
-      const popupId = button.getAttribute('data-popup');
+  document.querySelectorAll(".service-btn").forEach((button) => {
+    button.addEventListener("click", function () {
+      const popupId = button.getAttribute("data-popup");
       openPopup(popupId);
     });
   });
 
   // Adaugă evenimentul de închidere pentru fiecare buton 'close'
-  closeButtons.forEach(button => {
-    button.addEventListener('click', closePopup);
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", closePopup);
   });
 
   // Închide popup-ul dacă se dă click în afară
-  window.addEventListener('click', function(event) {
-    if (event.target.classList.contains('popup')) {
+  window.addEventListener("click", function (event) {
+    if (event.target.classList.contains("popup")) {
       closePopup();
     }
   });
@@ -146,27 +179,4 @@ if (window.innerWidth <= 768) {
         document.getElementById("formResponse").style.color = "red";
       }
     });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const openServicesBtn = document.getElementById("openServicesBtn");
-  const servicesPopup = document.getElementById("servicesPopup");
-  const closePopup = document.getElementsByClassName("close")[0];
-
-  // Deschide popup-ul când apasă pe buton
-  openServicesBtn.addEventListener("click", function () {
-    servicesPopup.style.display = "block";
-  });
-
-  // Închide popup-ul când apasă pe "x"
-  closePopup.addEventListener("click", function () {
-    servicesPopup.style.display = "none";
-  });
-
-  // Închide popup-ul dacă dai click în afara conținutului
-  window.addEventListener("click", function (event) {
-    if (event.target === servicesPopup) {
-      servicesPopup.style.display = "none";
-    }
-  });
 });

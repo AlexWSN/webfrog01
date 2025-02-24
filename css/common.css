@@ -136,415 +136,6 @@ html {
     padding: 20px; /* Redu și mai mult padding-ul pe telefoane mici */
   }
 }
-/*SERVICES*/
-
-.services {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  z-index: 10; /* Peste alte elemente */
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.frog-image {
-  width: 100%; /* Ajustează la 100% pentru a ocupa întreaga lățime a containerului */
-  height: auto; /* Pentru a păstra proporțiile imaginii */
-  display: block; /* Asigură-te că imaginea este un element block-level */
-  margin: 0 auto; /* Centrarea orizontală a imaginii */
-  margin-top: 100px;
-}
-
-.overlay {
-  position: absolute;
-  top: 50%; /* Plasează overlay-ul la mijlocul paginii pe verticală */
-  left: 50%; /* Plasează overlay-ul la mijlocul paginii pe orizontală */
-  width: 150%; /* Ajustează lățimea la 100% pentru a ocupa întregul container */
-  height: 100%; /* Asigură-te că înălțimea ocupă întregul container */
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  border-radius: 20px; /* Colțuri rotunjite */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-  transform: translate(-50%, -50%); /* Așează elementul perfect în centru */
-  z-index: 3;
-}
-
-.overlay p {
-  font-size: 1rem; /* Dimensiunea textului pentru paragrafe */
-  line-height: 1.6;
-  margin: -100 10px 20px; /* Spațiu uniform pe toate laturile */
-  padding: 0 1px; /* Adaugă padding de 20px pe stânga și dreapta */
-  z-index: 10;
-  position: relative;
-  color: #7b5e3e; /* Culoare de bază */
-  font-family: Arial, sans-serif;
-}
-
-.overlay h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #665b4f; /* Culoare de bază */
-}
-
-.buttons {
-  display: flex;
-  gap: 15px;
-}
-
-.service-btn {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  justify-content: center;
-  width: 160px;
-  height: 130px;
-  background: rgba(8, 8, 8, 0.7);
-  border: 1px solid #623b0d;
-  border-radius: 20px;
-  color: #665b4f;
-  font-size: 14px;
-  text-align: center;
-  padding: 10px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  z-index: 3;
-  gap: 18px; /* Adaugă spațiu între imagine și text */
-}
-
-.btn-icon {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-}
-
-.btn-text {
-  font-weight: bold;
-  margin-bottom: 5px;
-  white-space: nowrap;
-  font-family: Arial, sans-serif;
-}
-
-.service-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-/* Culoare text pe hover */
-.service-btn:hover span {
-  color: #ffffff;
-}
-
-/* Asigură-te că span-ul are culoarea corectă atunci când butonul este activat */
-.service-btn span {
-  transition: color 0.3s ease;
-}
-
-/* Culoare text normal */
-.service-btn span {
-  color: #665b4f;
-}
-
-.service-btn img {
-  width: 50px;
-  height: 60px;
-  margin-bottom: 5px;
-}
-
-.service-btn span {
-  font-size: 10px;
-}
-
-/* Stiluri generale pentru butonul #openServicesBtn */
-#openServicesBtn {
-  background-color: #1f1f20; /* Culoare de fundal albastru */
-  color: white; /* Culoare textului */
-  border: none;
-  padding: 12px 25px; /* Padding confortabil pentru desktop */
-  font-size: 18px; /* Dimensiunea fontului pe desktop */
-  font-weight: bold; /* Font îngroșat */
-  cursor: pointer;
-  border-radius: 50px;
-  transition: background-color 0.3s, transform 0.2s ease-in-out;
-  text-transform: uppercase; /* Transformă textul la majuscule */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adaugă o umbră ușoară */
-  width: 100%; /* Face butonul să ocupe întreaga lățime a containerului .services */
-  box-sizing: border-box; /* Include padding-ul în dimensiunile butonului */
-  margin-top: 20px; /* Adaugă un spațiu deasupra butonului */
-}
-
-/* Stiluri la hover pentru #openServicesBtn */
-#openServicesBtn:hover {
-  background-color: #666161; /* Schimbă culoarea la hover */
-  transform: scale(1.05); /* Mărește butonul puțin la hover */
-}
-
-/* Media query pentru mobil (max-width: 768px) */
-@media (max-width: 768px) {
-  #openServicesBtn {
-    padding: 10px 20px; /* Ajustează padding-ul pentru mobil */
-    font-size: 16px; /* Mărește fontul pe mobil */
-  }
-}
-
-/* POPUP STYLING */
-.popup {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 550px;
-  max-width: 90%; /* Se adaptează la ecrane mai mici */
-  background: rgba(0, 0, 0, 0.85); /* Negru semi-transparent */
-  color: white;
-  padding: 20px;
-  border-radius: 20px;
-  border: 2px solid #553514; /* Margine portocalie */
-  box-shadow: 0 0 15px rgba(157, 80, 4, 0.5);
-  z-index: 1000;
-  overflow: auto;
-}
-
-/* Conținutul popup-ului */
-.popup-content {
-  padding: 20px;
-  border-radius: 10px;
-  width: auto; /* Fix pentru centrarea conținutului */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-/* Butonul de închidere */
-.close {
-  position: absolute;
-  margin-top: -10%; /* Poziționează butonul în partea de sus */
-  margin-right: -13%; /* Poziționează butonul în dreapta */
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
-  background: none;
-  border: none;
-  color: #ff8000;
-  transition: color 0.3s ease;
-}
-
-.close:hover {
-  color: #ffaa33; /* Culoare mai deschisă pe hover */
-}
-
-/* Ajustare text */
-.popup p {
-  font-size: 14px; /* Ușor mai mare pentru lizibilitate */
-  text-align: justify; /* Păstrează textul justificat */
-  line-height: 1.8; /* Mai mult spațiu între linii pentru claritate */
-  color: #ddd; /* Un alb-gri mai soft, ca să nu fie obositor */
-  margin-top: 15px;
-  padding: 0 10px; /* Un mic padding lateral pentru un aspect aerisit */
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeInText 0.6s ease-out 0.2s forwards;
-}
-
-/* Stilizare pentru elementele vizate în text */
-.highlight {
-  color: #ffaa33; /* Culoarea portocalie pentru logo, culori, fonturi și imagini */
-  font-weight: bold; /* Face textul mai îndrăzneț */
-  font-style: italic; /* Face textul cursiv pentru a-l evidenția */
-}
-
-/* Animatie pentru apariție lină */
-@keyframes fadeInText {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Animatie pentru apariție lină */
-@keyframes fadeInText {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.popup h3 {
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-  color: #9d6005; /* Nuanță caldă de portocaliu */
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-top: 10px;
-  margin-bottom: 15px;
-  position: relative;
-  line-height: 1.5; /* Ajustare pentru echilibru vizual */
-  opacity: 0;
-  transform: translateY(-10px);
-  animation: fadeInSlide 0.5s ease-out forwards;
-}
-
-/* Animatie */
-@keyframes fadeInSlide {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.service-btn:hover {
-  color: #ffffff; /* Culoarea textului la hover */
-} /* Media query pentru mobil */
-@media (max-width: 768px) {
-  .service-btn {
-    padding: 12px 16px; /* Crește padding-ul pentru a face butonul mai accesibil pe mobil */
-    font-size: 14px; /* Reduce dimensiunea fontului pentru mobil */
-    width: 100%; /* Face butonul să ocupe întreaga lățime pe mobil */
-    box-sizing: border-box; /* Asigură-te că padding-ul nu face ca butonul să iasă din container */
-  }
-
-
-}
-.close:hover {
-  color: #ffcc80; /* O nuanță mai deschisă de portocaliu la hover */
-}
-.close:hover {
-  color: #ffcc80;
-  transform: rotate(-15deg) scale(1.05); /* Ușoară rotire + mică scalare */
-}
-
-@keyframes swing {
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
-  25% {
-    transform: rotate(-10deg) scale(1.05);
-  }
-  50% {
-    transform: rotate(10deg) scale(1.05);
-  }
-  75% {
-    transform: rotate(-5deg) scale(1.05);
-  }
-  100% {
-    transform: rotate(0deg) scale(1);
-  }
-}
-@media (max-width: 768px) {
-  /* 🔹 Elimină scroll-ul lateral */
-  html,
-  body {
-    overflow-x: hidden;
-    width: 100%;
-  }
-
-  /* Ajustează secțiunea de servicii */
-  .services {
-    max-width: 100%;
-    padding: 15px;
-    margin-top: 30%;
-  }
-
-  /* Optimizează imaginea broaștei */
-  .frog-image {
-    width: 100%;
-    max-width: 250px;
-    margin-top: 50px;
-  }
-
-  /* Corectează overlay-ul */
-  .overlay {
-    position: absolute;
-    width: 70%;
-    height: auto;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px;
-    font-size: 14px;
-  }
-
-  .overlay h2 {
-    font-size: 20px;
-  }
-
-  .overlay p {
-    font-size: 14px;
-    margin: 10px 0;
-  }
-
-  /* Aranjare iconițe 2x2 */
-  .buttons {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 butoane pe rând */
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .service-btn {
-    width: 100%; /* Ocupă toată lățimea coloanei */
-    height: auto;
-    padding: 15px;
-    font-size: 12px;
-  }
-
-  .btn-icon {
-    width: 80px;
-    height: 80px;
-  }
-
-  .btn-text {
-    font-size: 12px;
-  }
-
-  /* Stilizează pop-up-ul */
-  .popup {
-    width: 90%;
-    height: auto;
-    max-height: 90vh; /* Evită depășirea ecranului */
-    padding: 15px;
-  }
-
-  .popup p {
-    font-size: 12px;
-    margin-top: 10%;
-  }
-
-  .close {
-    top: 5px;
-    right: 5px;
-    font-size: 18px;
-  }
-
-  /* 🔹 Evită suprapunerea butonului Home */
-  .home-btn {
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-  }
-}
 
 /* Bara portocalie de design */
 .design-bar {
@@ -745,6 +336,561 @@ html {
   .line {
     font-size: 30px; /* Dimensiune mai mică a textului */
     z-index: 10;
+  }
+}
+
+/*SERVICES*/
+
+.services {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  z-index: 10; /* Peste alte elemente */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.frog-image {
+  width: 100%; /* Ajustează la 100% pentru a ocupa întreaga lățime a containerului */
+  height: auto; /* Pentru a păstra proporțiile imaginii */
+  display: block; /* Asigură-te că imaginea este un element block-level */
+  margin: 0 auto; /* Centrarea orizontală a imaginii */
+  margin-top: 100px;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%; /* Plasează overlay-ul la mijlocul paginii pe verticală */
+  left: 50%; /* Plasează overlay-ul la mijlocul paginii pe orizontală */
+  width: 150%; /* Ajustează lățimea la 100% pentru a ocupa întregul container */
+  height: 100%; /* Asigură-te că înălțimea ocupă întregul container */
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 20px; /* Colțuri rotunjite */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  transform: translate(-50%, -50%); /* Așează elementul perfect în centru */
+  z-index: 3;
+}
+
+.overlay p {
+  font-size: 1rem; /* Dimensiunea textului pentru paragrafe */
+  line-height: 1.6;
+  margin: -100 10px 20px; /* Spațiu uniform pe toate laturile */
+  padding: 0 1px; /* Adaugă padding de 20px pe stânga și dreapta */
+  z-index: 10;
+  position: relative;
+  color: #7b5e3e; /* Culoare de bază */
+  font-family: Arial, sans-serif;
+}
+
+.overlay h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #665b4f; /* Culoare de bază */
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.service-btn {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 130px;
+  background: rgba(8, 8, 8, 0.7);
+  border: 1px solid #623b0d;
+  border-radius: 20px;
+  color: #665b4f;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  z-index: 3;
+  gap: 18px; /* Adaugă spațiu între imagine și text */
+}
+
+.btn-icon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.btn-text {
+  font-weight: bold;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  font-family: Arial, sans-serif;
+}
+
+.service-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+/* Culoare text pe hover */
+.service-btn:hover span {
+  color: #ffffff;
+}
+
+/* Asigură-te că span-ul are culoarea corectă atunci când butonul este activat */
+.service-btn span {
+  transition: color 0.3s ease;
+}
+
+/* Culoare text normal */
+.service-btn span {
+  color: #665b4f;
+}
+
+.service-btn img {
+  width: 50px;
+  height: 60px;
+  margin-bottom: 5px;
+}
+
+.service-btn span {
+  font-size: 10px;
+}
+.service-btn[data-popup="popup5"] {
+  flex-basis: 100%; /* Asigură-te că butonul 5 ocupă întreaga lățime disponibilă */
+  text-align: center;
+  margin-top: 20px; /* Poți ajusta distanța față de celelalte butoane */
+}
+/* Stilizare pentru containerul de butoane */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; /* Aliniere egală între butoane */
+  gap: 20px; /* Spatiu intre butoane */
+  position: relative;
+  align-items: center; 
+}
+
+/* Stilizare pentru butonul 5 */
+.service-btn[data-popup="popup5"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: auto; /* Ajustează dimensiunea butonului */
+  max-width: 100%; /* Permite butonului să ocupe toată lățimea secțiunii */
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  border: 0.50px solid #a06028; /* Margine portocalie */
+  position: center;
+}    
+
+/* Media Query pentru ecrane mici (mobil) */
+@media (max-width: 767px) {
+  .buttons {
+    justify-content: center;  /* Centrarea butoanelor pe mobil */
+  }
+
+  .service-btn[data-popup="popup5"] {
+    width: 80%;  /* Lățimea butonului pe mobil */
+    margin-left: auto;
+    margin-right: auto;  /* Centrarea pe orizontală */
+  }
+}
+
+/* Media Query pentru ecrane mari (desktop) */
+@media (min-width: 768px) {
+  .service-btn[data-popup="popup5"] {
+    width: auto;  /* Butonul va avea lățime automată pe desktop */
+    max-width: 300px; /* Lățime maximă pe desktop */
+    margin-top: 30px;  /* Ajustează distanța față de celelalte butoane */
+  }
+}
+
+/* POPUP STYLING */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  max-width: 90%; /* Se adaptează la ecrane mai mici */
+  background: rgba(0, 0, 0, 0.85); /* Negru semi-transparent */
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  border: 2px solid #553514; /* Margine portocalie */
+  box-shadow: 0 0 15px rgba(157, 80, 4, 0.5);
+  z-index: 1000;
+  overflow: auto;
+}
+
+/* Conținutul popup-ului */
+.popup-content {
+  padding: 20px;
+  border-radius: 10px;
+  width: auto; /* Fix pentru centrarea conținutului */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Butonul de închidere */
+.close {
+  position: absolute;
+  margin-top: -10%; /* Poziționează butonul în partea de sus */
+  margin-right: -13%; /* Poziționează butonul în dreapta */
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #ff8000;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #ffaa33; /* Culoare mai deschisă pe hover */
+}
+
+/* Ajustare text */
+.popup p {
+  font-size: 14px; /* Ușor mai mare pentru lizibilitate */
+  text-align: justify; /* Păstrează textul justificat */
+  line-height: 1.8; /* Mai mult spațiu între linii pentru claritate */
+  color: #ddd; /* Un alb-gri mai soft, ca să nu fie obositor */
+  margin-top: 15px;
+  padding: 0 10px; /* Un mic padding lateral pentru un aspect aerisit */
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInText 0.6s ease-out 0.2s forwards;
+}
+
+/* Stilizare pentru elementele vizate în text */
+.highlight {
+  color: #ffaa33; /* Culoarea portocalie pentru logo, culori, fonturi și imagini */
+  font-weight: bold; /* Face textul mai îndrăzneț */
+  font-style: italic; /* Face textul cursiv pentru a-l evidenția */
+}
+
+/* Animatie pentru apariție lină */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animatie pentru apariție lină */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup h3 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #9d6005; /* Nuanță caldă de portocaliu */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  position: relative;
+  line-height: 1.5; /* Ajustare pentru echilibru vizual */
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeInSlide 0.5s ease-out forwards;
+}
+
+/* Animatie */
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-btn:hover {
+  color: #ffffff; /* Culoarea textului la hover */
+}
+
+/* Media query pentru mobil */
+@media (max-width: 768px) {
+  .service-btn {
+    padding: 12px 16px; /* Crește padding-ul pentru a face butonul mai accesibil pe mobil */
+    font-size: 14px; /* Reduce dimensiunea fontului pentru mobil */
+    width: 100%; /* Face butonul să ocupe întreaga lățime pe mobil */
+    box-sizing: border-box; /* Asigură-te că padding-ul nu face ca butonul să iasă din container */
+  }
+}
+.close:hover {
+  color: #ffcc80; /* O nuanță mai deschisă de portocaliu la hover */
+}
+.close:hover {
+  color: #ffcc80;
+  transform: rotate(-15deg) scale(1.05); /* Ușoară rotire + mică scalare */
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-10deg) scale(1.05);
+  }
+  50% {
+    transform: rotate(10deg) scale(1.05);
+  }
+  75% {
+    transform: rotate(-5deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+@media (max-width: 768px) {
+  /* 🔹 Elimină scroll-ul lateral */
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Ajustează secțiunea de servicii */
+  .services {
+    max-width: 100%;
+    padding: 15px;
+    margin-top: 30%;
+  }
+
+  /* Optimizează imaginea broaștei */
+  .frog-image {
+    width: 100%;
+    max-width: 250px;
+    margin-top: 50px;
+  }
+
+  /* Corectează overlay-ul */
+  .overlay {
+    position: absolute;
+    width: 70%;
+    height: auto;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .overlay h2 {
+    font-size: 20px;
+  }
+
+  .overlay p {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+
+  /* Aranjare iconițe 2x2 */
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 butoane pe rând */
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .service-btn {
+    width: 100%; /* Ocupă toată lățimea coloanei */
+    height: auto;
+    padding: 15px;
+    font-size: 12px;
+  }
+
+  .btn-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .btn-text {
+    font-size: 12px;
+  }
+
+  /* Stilizează pop-up-ul */
+  .popup {
+    width: 90%;
+    height: auto;
+    max-height: 90vh; /* Evită depășirea ecranului */
+    padding: 15px;
+  }
+
+  .popup p {
+    font-size: 12px;
+    margin-top: 10%;
+  }
+
+  .close {
+    top: 5px;
+    right: 5px;
+    font-size: 18px;
+  }
+
+  /* Ajustări pentru mobile */
+  @media (max-width: 768px) {
+    .services {
+      max-width: 100%;
+      margin-top: 30%;
+      margin-bottom: 80px;
+    }
+
+    .frog-image {
+      width: 100%;
+      max-width: 250px;
+      margin-top: 50px;
+    }
+
+    .overlay {
+      width: 70%;
+      height: auto;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .service-btn {
+      width: 100%;
+      height: auto;
+      padding: 15px;
+      font-size: 12px;
+    }
+
+    .btn-icon {
+      width: 80px;
+      height: 80px;
+    }
+
+    .btn-text {
+      font-size: 12px;
+    }
+
+    .popup {
+      width: 90%;
+      height: auto;
+      max-height: 90vh;
+      padding: 15px;
+    }
+
+    .popup p {
+      font-size: 12px;
+      margin-top: 10%;
+    }
+
+    .close {
+      top: 5px;
+      right: 5px;
+      font-size: 18px;
+    }
+
+    .home-btn {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+    }
+  }
+
+  /* Ajustări pentru tabletă (între 768px și 1024px) */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .services {
+      max-width: 80%;
+      margin-top: 20%;
+    }
+
+    #openServicesBtn {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    .service-btn {
+      width: 120px;
+      height: 100px;
+    }
+
+    .frog-image {
+      width: 80%;
+      margin-top: 60px;
+    }
+
+    .popup {
+      width: 80%;
+    }
+  }
+
+  /* Ajustări pentru desktop (ecrane mari) */
+  @media (min-width: 1024px) {
+    .services {
+      max-width: 60%;
+      margin-top: 10%;
+    }
+
+    #openServicesBtn {
+      padding: 15px 30px;
+      font-size: 18px;
+    }
+
+    .service-btn {
+      width: 160px;
+      height: 130px;
+    }
+
+    .frog-image {
+      width: 70%;
+      margin-top: 100px;
+    }
+
+    .popup {
+      width: 50%;
+    }
+  }
+
+  /* 🔹 Evită suprapunerea butonului Home */
+  .home-btn {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
   }
 }
 
