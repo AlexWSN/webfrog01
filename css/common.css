@@ -143,6 +143,11 @@ html {
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
+  z-index: 10; /* Peste alte elemente */
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .frog-image {
@@ -245,8 +250,6 @@ html {
   color: #665b4f;
 }
 
-
-
 .service-btn img {
   width: 50px;
   height: 60px;
@@ -265,7 +268,7 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 550px;
-  height: 400px;
+  max-width: 90%; /* Se adaptează la ecrane mai mici */
   background: rgba(0, 0, 0, 0.85); /* Negru semi-transparent */
   color: white;
   padding: 20px;
@@ -276,33 +279,135 @@ html {
   overflow: auto;
 }
 
+/* Conținutul popup-ului */
 .popup-content {
-  text-align: justify;
-  position: relative;
-  padding-right: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  width: auto; /* Fix pentru centrarea conținutului */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   font-family: Arial, sans-serif;
+  text-align: center;
 }
-.popup p {
-  font-size: 13px;
-  text-align: justify; /* Justifică textul */
-  line-height: 1.6;
-  margin-top: 20%;
-}
+
+/* Butonul de închidere */
 .close {
   position: absolute;
-  top: 10px; /* 10px față de marginea de sus a pop-up-ului */
-  right: 10px;
-  color: #ff8000;
+  margin-top: -10%; /* Poziționează butonul în partea de sus */
+  margin-right: -13%; /* Poziționează butonul în dreapta */
+  font-size: 24px;
+  font-weight: bold;
   cursor: pointer;
+  background: none;
+  border: none;
+  color: #ff8000;
   transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #ffaa33; /* Culoare mai deschisă pe hover */
+}
+
+/* Ajustare text */
+.popup p {
+  font-size: 14px; /* Ușor mai mare pentru lizibilitate */
+  text-align: justify; /* Păstrează textul justificat */
+  line-height: 1.8; /* Mai mult spațiu între linii pentru claritate */
+  color: #ddd; /* Un alb-gri mai soft, ca să nu fie obositor */
+  margin-top: 15px;
+  padding: 0 10px; /* Un mic padding lateral pentru un aspect aerisit */
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInText 0.6s ease-out 0.2s forwards;
+}
+
+/* Stilizare pentru elementele vizate în text */
+.highlight {
+  color: #ffaa33; /* Culoarea portocalie pentru logo, culori, fonturi și imagini */
+  font-weight: bold; /* Face textul mai îndrăzneț */
+  font-style: italic; /* Face textul cursiv pentru a-l evidenția */
+}
+
+/* Animatie pentru apariție lină */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animatie pentru apariție lină */
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup h3 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #9d6005; /* Nuanță caldă de portocaliu */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  position: relative;
+  line-height: 1.5; /* Ajustare pentru echilibru vizual */
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeInSlide 0.5s ease-out forwards;
+}
+
+/* Animatie */
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .close:hover {
   color: #ffcc80; /* O nuanță mai deschisă de portocaliu la hover */
 }
+.close:hover {
+  color: #ffcc80;
+  transform: rotate(-15deg) scale(1.05); /* Ușoară rotire + mică scalare */
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-10deg) scale(1.05);
+  }
+  50% {
+    transform: rotate(10deg) scale(1.05);
+  }
+  75% {
+    transform: rotate(-5deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
 @media (max-width: 768px) {
   /* 🔹 Elimină scroll-ul lateral */
-  html, body {
+  html,
+  body {
     overflow-x: hidden;
     width: 100%;
   }
@@ -312,7 +417,6 @@ html {
     max-width: 100%;
     padding: 15px;
     margin-top: 30%;
-
   }
 
   /* Optimizează imaginea broaștei */
@@ -324,7 +428,7 @@ html {
 
   /* Corectează overlay-ul */
   .overlay {
-    position:absolute;
+    position: absolute;
     width: 70%;
     height: auto;
     top: 60%;
@@ -386,8 +490,6 @@ html {
     right: 5px;
     font-size: 18px;
   }
-
-  
 
   /* 🔹 Evită suprapunerea butonului Home */
   .home-btn {
@@ -978,45 +1080,6 @@ html {
   color: #ccc;
   padding: 10px;
   font-size: 16px;
-}
-
-/* Formularul de contact */
-
-.contact-section {
-  display: flex; /* Activează flexbox */
-  justify-content: center; /* Centrează pe orizontală */
-  align-items: center; /* Centrează pe verticală */
-  flex-direction: column; /* Asigură că formularul și alte elemente sunt stivuite */
-  margin-top: 0;
-
-  /* Imaginea de fundal */
-  background-size: contain; /* Păstrează proporțiile imaginii */
-  background-repeat: no-repeat; /* Fără repetare */
-  background-position: center; /* Centrează imaginea */
-  position: relative; /* Pentru controlul poziției */
-  z-index: 4;
-}
-
-.contact-section h2 {
-  text-align: center;
-  margin-bottom: 10px;
-  font-size: 24px;
-  color: #ff9500;
-}
-
-.contact-form {
-  align-items: center;
-  width: 60%; /* Ajustează dimensiunea formularului */
-  max-width: 300px; /* Dimensiune maximă a formularului */
-  padding: 10px; /* Spațiu interior */
-  display: flex;
-  flex-direction: column; /* Elemente stivuite vertical */
-  gap: 1px; /* Spațiu între elemente */
-  background: rgba(36, 36, 36, 0.8); /* Fundal translucid*/
-  border-radius: 10px; /* Colțuri rotunjite */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Umbră pentru adâncime */
-  position: relative;
-  z-index: 1; /* Formularul apare deasupra imaginii */
 }
 
 /* Global styles */
@@ -1741,21 +1804,23 @@ html {
 
 /* Formularul de contact */
 
-.contact-section {
+.contact-page .contact-section {
+  background: url("../images/chenar\ formular\ contact.png") no-repeat center
+    center;
+  background-size: contain; /* Ajustează mărimea imaginii */
   display: flex; /* Activează flexbox */
   justify-content: center; /* Centrează pe orizontală */
   align-items: center; /* Centrează pe verticală */
   flex-direction: column; /* Asigură că formularul și alte elemente sunt stivuite */
-  height: 80vh; /* Setează înălțimea secțiunii să ocupe întreaga fereastră */
-  padding: 40; /* Elimină paddingul */
-  margin-top: 0%;
-
-  /* Imaginea de fundal */
-  background-size: contain; /* Păstrează proporțiile imaginii */
-  background-repeat: no-repeat; /* Fără repetare */
-  background-position: center; /* Centrează imaginea */
-  position: relative; /* Pentru controlul poziției */
-  z-index: 4;
+  height: 70vh; /* Setează înălțimea secțiunii să ocupe întreaga fereastră */
+  padding: 0; /* Elimină paddingul */
+  margin-top: 10%;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+.contact-page {
+  overflow: hidden; /* Ascunde scroll-ul doar pe pagina de contact */
 }
 
 .contact-section h2 {
@@ -1766,18 +1831,16 @@ html {
 }
 
 .contact-form {
-  align-items: center;
-  width: 60%; /* Ajustează dimensiunea formularului */
-  max-width: 300px; /* Dimensiune maximă a formularului */
-  padding: 10px; /* Spațiu interior */
+  background: none; /* Elimină fundalul */
+  width: 100%; /* Lățime mai mare pentru aliniere */
+  max-width: 400px;
+  padding: 0px;
   display: flex;
-  flex-direction: column; /* Elemente stivuite vertical */
-  gap: 1px; /* Spațiu între elemente */
-  background: rgba(36, 36, 36, 0.8); /* Fundal translucid*/
-  border-radius: 10px; /* Colțuri rotunjite */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Umbră pentru adâncime */
-  position: relative;
-  z-index: 1; /* Formularul apare deasupra imaginii */
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  border-radius: 10px;
+  z-index: 1;
 }
 
 .contact-form label {
@@ -1949,6 +2012,9 @@ html {
   /* alte stiluri pentru modal */
 }
 
-.modal.show {
+/* .modal.show {
   display: block;
 }
+* {
+  outline: 1px solid rgb(132, 200, 14); 
+}  */
