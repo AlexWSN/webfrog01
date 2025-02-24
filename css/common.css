@@ -184,7 +184,7 @@ html {
   padding: 0 1px; /* Adaugă padding de 20px pe stânga și dreapta */
   z-index: 10;
   position: relative;
-  color: #665b4f; /* Culoare de bază */
+  color: #7b5e3e; /* Culoare de bază */
   font-family: Arial, sans-serif;
 }
 
@@ -258,6 +258,38 @@ html {
 
 .service-btn span {
   font-size: 10px;
+}
+
+/* Stiluri generale pentru butonul #openServicesBtn */
+#openServicesBtn {
+  background-color: #1f1f20; /* Culoare de fundal albastru */
+  color: white; /* Culoare textului */
+  border: none;
+  padding: 12px 25px; /* Padding confortabil pentru desktop */
+  font-size: 18px; /* Dimensiunea fontului pe desktop */
+  font-weight: bold; /* Font îngroșat */
+  cursor: pointer;
+  border-radius: 50px;
+  transition: background-color 0.3s, transform 0.2s ease-in-out;
+  text-transform: uppercase; /* Transformă textul la majuscule */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adaugă o umbră ușoară */
+  width: 100%; /* Face butonul să ocupe întreaga lățime a containerului .services */
+  box-sizing: border-box; /* Include padding-ul în dimensiunile butonului */
+  margin-top: 20px; /* Adaugă un spațiu deasupra butonului */
+}
+
+/* Stiluri la hover pentru #openServicesBtn */
+#openServicesBtn:hover {
+  background-color: #666161; /* Schimbă culoarea la hover */
+  transform: scale(1.05); /* Mărește butonul puțin la hover */
+}
+
+/* Media query pentru mobil (max-width: 768px) */
+@media (max-width: 768px) {
+  #openServicesBtn {
+    padding: 10px 20px; /* Ajustează padding-ul pentru mobil */
+    font-size: 16px; /* Mărește fontul pe mobil */
+  }
 }
 
 /* POPUP STYLING */
@@ -381,6 +413,16 @@ html {
 
 .service-btn:hover {
   color: #ffffff; /* Culoarea textului la hover */
+} /* Media query pentru mobil */
+@media (max-width: 768px) {
+  .service-btn {
+    padding: 12px 16px; /* Crește padding-ul pentru a face butonul mai accesibil pe mobil */
+    font-size: 14px; /* Reduce dimensiunea fontului pentru mobil */
+    width: 100%; /* Face butonul să ocupe întreaga lățime pe mobil */
+    box-sizing: border-box; /* Asigură-te că padding-ul nu face ca butonul să iasă din container */
+  }
+
+
 }
 .close:hover {
   color: #ffcc80; /* O nuanță mai deschisă de portocaliu la hover */
