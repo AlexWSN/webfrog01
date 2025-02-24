@@ -148,3 +148,25 @@ if (window.innerWidth <= 768) {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const openServicesBtn = document.getElementById("openServicesBtn");
+  const servicesPopup = document.getElementById("servicesPopup");
+  const closePopup = document.getElementsByClassName("close")[0];
+
+  // Deschide popup-ul când apasă pe buton
+  openServicesBtn.addEventListener("click", function () {
+    servicesPopup.style.display = "block";
+  });
+
+  // Închide popup-ul când apasă pe "x"
+  closePopup.addEventListener("click", function () {
+    servicesPopup.style.display = "none";
+  });
+
+  // Închide popup-ul dacă dai click în afara conținutului
+  window.addEventListener("click", function (event) {
+    if (event.target === servicesPopup) {
+      servicesPopup.style.display = "none";
+    }
+  });
+});

@@ -379,6 +379,9 @@ html {
   }
 }
 
+.service-btn:hover {
+  color: #ffffff; /* Culoarea textului la hover */
+}
 .close:hover {
   color: #ffcc80; /* O nuanță mai deschisă de portocaliu la hover */
 }
