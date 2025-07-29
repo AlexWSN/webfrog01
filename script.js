@@ -15,24 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Generăm scântei și fulgi de cenușă continuu
+ 
+  let intervalTime = window.innerWidth <= 768 ? 300 : 200;
   setInterval(() => {
     createParticle("spark");
     createParticle("ash");
-  }, 200);
-
-  // Modifică intervalul animațiilor particulelor pe mobil
-  if (window.innerWidth <= 768) {
-    setInterval(() => {
-      createParticle("spark");
-      createParticle("ash");
-    }, 300); // Crește intervalul pentru a reduce sarcina
-  } else {
-    setInterval(() => {
-      createParticle("spark");
-      createParticle("ash");
-    }, 200); // Păstrează intervalul mai scurt pe desktop
-  }
-
+  }, intervalTime);
+  
+ 
   // Obținem modalul și elementele asociate
   var modal = document.getElementById("imageModal");
   var modalImg = document.getElementById("modalImage");
@@ -66,34 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const navMenu = document.querySelector(".button-container");
 
   // Verificăm dacă butonul burger și meniul există înainte de a le manipula
-  if (burger && navMenu) {
+  if (burger) {
     burger.addEventListener("click", function () {
-      console.log("Butonul hamburger a fost apăsat."); // Debug message
-      navMenu.classList.toggle("active");
-
-      // Verifică dacă meniul a fost activat
-      if (navMenu.classList.contains("active")) {
-        console.log("Meniul este acum activ.");
-      } else {
-        console.log("Meniul este acum inactiv.");
-      }
-    });
-  }
-  // Verificăm dacă butonul burger și meniul există înainte de a le manipula
-  if (burger && sideMenu) {
-    // Când se apasă pe butonul hamburger (pentru mobil)
-    burger.addEventListener("click", function () {
+      navMenu?.classList.toggle("active");  // Activează meniul de navigație, dacă există
+      sideMenu?.classList.toggle("active"); // Activează meniul lateral, dacă există
       console.log("Butonul hamburger a fost apăsat.");
-      sideMenu.classList.toggle("active"); // Activează meniul lateral
-
-      // Verifică dacă meniul lateral este activ
-      if (sideMenu.classList.contains("active")) {
-        console.log("Meniul lateral este acum activ.");
-      } else {
-        console.log("Meniul lateral este acum inactiv.");
-      }
     });
   }
+  
 
   // Închide meniul lateral atunci când apesi pe butonul "Close" (pe mobil)
   if (closeMenu) {

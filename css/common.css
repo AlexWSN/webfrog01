@@ -67,6 +67,203 @@ html {
   }
 }
 
+
+/* Stiluri pentru meniul hamburger */
+.menu-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px; /* Dimensiunea cercului */
+  height: 60px; /* Dimensiunea cercului */
+  border-radius: 10%; /* Face-l cerc */
+  border: 0px solid #d66903; /* Bordura cercului */
+  z-index: 100; /* Pune-l deasupra altor elemente */
+}
+
+.menu-toggle:hover {
+  transform: scale(1.1); /* Mărește butonul ușor pentru un efect vizual */
+  box-shadow: 0 0 15px 0.1px rgba(255, 140, 0, 0.7);
+}
+
+/* Prima linie */
+.menu-toggle .bar:nth-child(1) {
+  width: 30px;
+  height: 2px;
+}
+
+/* A doua linie */
+.menu-toggle .bar:nth-child(2) {
+  width: 24px;
+  height: 2px;
+}
+
+/* A treia linie */
+.menu-toggle .bar:nth-child(3) {
+  width: 18px;
+  height: 2px;
+}
+
+/* Pe mobil, meniul lateral va fi afișat pe stânga */
+@media (max-width: 768px) {
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Meniul este ascuns inițial */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    transition: left 0.3s ease; /* Animație pentru deschidere */
+    z-index: 999;
+  }
+
+  .side-menu.active {
+    left: 0; /* Meniul lateral devine vizibil */
+  }
+
+  /* Meniul burger va fi vizibil pe mobil */
+  .menu-toggle {
+    display: block; /* Butonul burger va fi vizibil pe mobil */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+  }
+
+  /* Stiluri pentru butoanele din meniul lateral */
+  .side-menu .button-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .side-menu .button {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    background: rgba(8, 8, 8, 0.7);
+    border: 1px solid #623b0d;
+    color: #af967b;
+    font-size: 14px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  .side-menu .button:hover {
+    background-color: rgb(57, 56, 54);
+  }
+}
+
+/* Media Queries consolidate și optimizate */
+@media (max-width: 768px) {
+  .button-container {
+    flex: 1 1 100%;
+    font-size: 0.9rem;
+  }
+
+  .background {
+    background-size: contain;
+  }
+}
+
+@media (max-width: 480px) {
+  .button-container {
+    font-size: 0.8rem;
+    padding: 10px 15px;
+  }
+
+  .background {
+    background-size: contain;
+  }
+}
+.element {
+  -webkit-transform: rotate(45deg); /* Safari/Chrome */
+  -moz-transform: rotate(45deg); /* Firefox */
+  -ms-transform: rotate(45deg); /* Internet Explorer */
+  transform: rotate(45deg); /* Standard */
+} 
+/* Ascundem meniul burger pe ecranele mari */
+.menu-toggle {
+  display: none;
+  background-color: transparent;
+}
+
+/* Stilizare liniile butonului burger */
+.menu-toggle div {
+  width: 25px;
+  height: 2px; /* Grosimea liniilor */
+  background-color: #8f8888;
+  transition: 0.4s;
+}
+
+/* Pentru ecranele mici */
+@media (max-width: 768px) {
+  /* Afișăm butonul burger doar pe ecranele mici */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 20px; /* Mutăm butonul burger în stânga */
+    cursor: pointer;
+    z-index: 10;
+  }
+}
+
+/* Ascunde meniul pe ecranele mici */
+.button-container {
+  display: none; /* Ascunde meniul implicit */
+}
+/* Meniul va fi afișat doar când are clasa "active" */
+.button-container.active {
+  gap: 0.1px; /* Ajustează spațiul dintre butoane (poate fi 5px sau o altă valoare mai mică) */
+}
+
+/* Interactivitate: hover */
+.menu-toggle:hover .bar {
+  background-color: #88450d; /* Culoare elegantă la hover */
+  transform: translateX(4px); /* Mișcare subtilă la hover */
+}
+
+/* Stiluri pentru meniul burger */
+.menu-toggle {
+  cursor: pointer;
+  display: flex; /* Asigură-te că barele se aliniază */
+  flex-direction: column;
+  padding: 10px;
+  z-index: 100; /* Pune meniul deasupra altor elemente */
+}
+
+/* Stil pentru barele din meniul burger */
+.bar {
+  width: 30px;
+  height: 3px;
+  margin: 5px 0;
+}
+
+/* Meniul va fi afișat doar când are clasa "active" */
+.button-container.active {
+  display: flex;
+}
+
+/* Stiluri pentru ecrane mari */
+@media (min-width: 601px) {
+  .button-container {
+    display: flex; /* Afișează meniul pe ecranele mari */
+  }
+
+  .menu-toggle {
+    display: none; /* Ascunde meniul burger pe ecranele mari */
+  }
+}
+@media (max-width: 768px) {
+  .home-btn {
+    display: none;
+  }
+}
+
 /* ABOUT US */
 
 .about-us-content {
